@@ -1,8 +1,125 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="containerHome">
+
+    <div class="viagensBanner">
+        <img src="~/img/MocaIlha.jpg" class="d-block" alt="Imagem de Paisagem">
+    </div>
+
+    <div class="text-center d-flex align-items-center justify-content-center mb-5">
+        <h1 class="display-4 mb-0">AllVoyaje</h1>
+        <img src="~/img/PatoAll.png" class="ms-4" alt="PatoLogo" style="height: 70px; width: auto; margin-top: 10px;">
+    </div>
+
+    <div class="text-center mb-5">
+        <img src="~/img/propaganda.webp" class="img-fluid" alt="Propaganda" style="width: 900px; height: 400px; border-radius: 5px;">
+    </div>
+
+    <div class="TextoPropaganda mb-5">
+        <div class="d-flex align-items-start mb-4">
+            <img src="~/img/familia.jpg" alt="Propaganda" style="width: 400px; height: auto; border-radius: 5px; margin-right: 20px;">
+            <div class="textoProp">
+                <p class="paragrafo">
+                    Viajar é uma experiência transformadora que nos conecta com novas culturas,
+                    nos oferece aventuras inesquecíveis e nos proporciona momentos de relaxamento
+                    e diversão. No entanto, o planejamento de uma viagem pode ser desafiador e demorado.
+                    É aí que a AllVoyage entra para transformar sua experiência de viagem em algo extraordinário.
+
+                    AllVoyage é o seu portal definitivo para explorar e vivenciar o melhor que o mundo tem a oferecer.
+                    Nosso site é mais do que uma simples plataforma de reservas; é uma janela para um universo de possibilidades.
+                    Com promoções imperdíveis e uma abordagem centrada no cliente, garantimos que sua viagem seja perfeita desde o
+                    momento da reserva até o retorno para casa.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="viagens">
+        <img src="~/img/folhamar.jpg" class="d-block" alt="Imagem de Paisagem">
+    </div>
+
+    <!--Começo Duvidas-->
+    <h2 class="tituloduvidas">Dúvidas Frequentes</h2>
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    1. Reserva e Pagamento
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                    <p><strong>Como faço para reservar uma viagem no AllVoyage?</strong> ara reservar uma viagem, primeiro, use nosso sistema de busca para encontrar passagens, hotéis ou pacotes de viagem de acordo com suas preferências. Selecione as opções desejadas e siga as instruções na tela para preencher os detalhes da sua reserva. Após revisar e confirmar as informações, você será direcionado para a página de pagamento onde pode finalizar sua reserva.</p>
+                    <p><strong>Quais métodos de pagamento são aceitos?</strong> Aceitamos diversos métodos de pagamento, incluindo cartões de crédito e débito das principais bandeiras, como Visa, MasterCard e American Express. Também aceitamos pagamentos via PayPal.  </p>
+                    <p><strong>Leia Avaliações:</strong> Consulte avaliações de outros viajantes para verificar a reputação do fornecedor ou do site.</p>
+                    <p><strong>O que fazer se encontrar um problema durante o pagamento?</strong> Se você encontrar problemas durante o pagamento, verifique se todos os detalhes do cartão estão corretos e se há saldo suficiente. Caso o problema persista, entre em contato </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                    2. Promoções e Ofertas
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <p><strong>Como encontro as promoções disponíveis?</strong> As promoções podem ser encontradas na seção “Ofertas e Promoções” do nosso site. Você também pode se inscrever em nossa newsletter para receber notificações sobre as últimas ofertas e descontos diretamente no seu e-mail.</p>
+                    <p><strong>As promoções são aplicáveis a todos os destinos e tipos de acomodação?</strong> Algumas promoções podem ter restrições de datas e destinos específicos. Verifique os detalhes da oferta para garantir que se aplica ao seu destino e tipo de acomodação desejado. Ofertas especiais podem incluir apenas passagens aéreas, hotéis ou pacotes completos. </p>
+                    <p><strong>Posso combinar promoções ou usar códigos de desconto adicionais?</strong> Sim, você pode usar códigos de desconto ao fazer sua reserva. Insira o código no campo específico durante o processo de pagamento para aplicar o desconto. No entanto, promoções e códigos de desconto não são combináveis e apenas uma oferta pode ser aplicada por reserva.</p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                   3. Suporte e Atendimento ao Cliente
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <p><strong>Como entro em contato com o suporte ao cliente?</strong>   Para entrar em contato com nosso suporte ao cliente, você pode usar o chat ao vivo disponível em nosso site, enviar um e-mail para suporte@allvoyage.com ou ligar para nosso número de telefone dedicado. Nosso atendimento está disponível de segunda a sexta-feira, das 9h às 18h.</p>
+                    <p><strong>O que fazer se precisar cancelar ou alterar minha reserva?</strong>  Se precisar cancelar ou alterar sua reserva, acesse a seção “Minhas Reservas” no nosso site para gerenciar suas opções. Siga as instruções para solicitar alterações ou cancelamentos. Observe que podem ser aplicadas taxas de cancelamento ou alteração, dependendo das políticas da reserva. </p>
+                    <p><strong>Como faço para relatar um problema ou uma experiência negativa?</strong> Para relatar um problema ou compartilhar uma experiência negativa, você pode preencher nosso formulário de feedback disponível na seção “Contato” do site ou enviar um e-mail detalhado para feedback@allvoyage.com. Nossa equipe de suporte analisará sua situação e tomará as medidas necessárias para resolver a questão.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--fim Duvidas-->
+
+    <div class="Pessoas mb-5">
+        <div class="d-flex align-items-center justify-content-between">
+            <div style="flex-grow: 1">
+                <div class="BolasPessoas d-flex align-items-center">
+                    <img src="~/img/donos.png" alt="Imagem Bola" class="bola" style="width: 100px; height: 100px; margin-right: 20px;">
+                    <div class="textoBola">
+                        <h3>Rafaela Capellini</h3>
+                        <p>
+                            Rafaela idealizou o site para transformar a forma como as pessoas planejam suas jornadas.
+                            Com uma combinação de expertise em tecnologia e um profundo entendimento das necessidades
+                            dos viajantes, ela criou uma plataforma que não apenas oferece promoções imperdíveis, mas
+                            também simplifica a experiência de reserva.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div style="flex-grow: 2">
+                <div class="BolasPessoas d-flex align-items-center">
+                    <img src="~/img/donos.png" alt="Imagem Bola" class="bola" style="width: 100px; height: 100px; margin-left: 20px;">
+                    <div class="textoBola">
+                        <h3>Leticia Fernanda</h3>
+                        <p>
+                            Letícia desempenhou um papel crucial na criação da AllVoyage, contribuindo com suas
+                            ideias inovadoras e habilidades excepcionais no desenvolvimento do site. Com uma visão aguçada 
+                            para detalhes e uma paixão por design e usabilidade, Letícia ajudou a moldar a plataforma, garantindo 
+                            que ela fosse não apenas funcional, mas também visualmente atraente e intuitiva.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+

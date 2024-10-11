@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Viagens";
+}
+
+<div class="containerHome">
+    <div class="viagensBanner">
+        <img src="~/img/cyu.webp" class="d-block" alt="Imagem de Paisagem">
+    </div>
+
+    <h1 class="display-4 mb-0 text-center">Passagens</h1>
+
+    <form name="frmPesquisa" action="/pacotes" method="GET" onsubmit="return validateForm();">
+        <div class="Grupo-info">
+            <div class="Saida-destino1">
+                <div class="sepDestiOri1" id="datalistOrigem">
+                    <select class="numeroum form-control" id="origem" name="origem" placeholder="Origem" required>
+                        <option value="1">São Paulo</option>
+                        <option value="2">Chile</option>
+                        <option value="3">China</option>
+                        <option value="4">Brasilia</option>
+                    </select>
+                </div>
+                <div id="datalistDestino1">
+                    <select class="numerodois form-control" id="destino" name="destino" placeholder="Destino" required>
+                        <option value="1" class="nacional">Rio de Janeiro</option>
+                        <option value="2" class="nacional">Salvador</option>
+                        <option value="3" class="internacional">Dubai</option>
+                        <option value="4" class="internacional">Chicago</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="NacInter1">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="tipoViagem" id="inlineRadio1" value="nacional" onclick="toggleDestinos();" checked>
+                    <label class="form-check-label" for="inlineRadio1">Nacionais</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="tipoViagem" id="inlineRadio2" value="internacional" onclick="toggleDestinos();">
+                    <label class="form-check-label" for="inlineRadio2">Internacionais</label>
+                </div>
+            </div>
+
+            <div class="emojiInput1">
+                <i class="fas fa-user emoji"></i>
+                <input class="QuantPessoas1" name="quantPessoas" type="number" step="1" value="2" min="1" required />
+            </div>
+
+            <div class="datas1">
+                <div class="cor-fundo">
+                    <div class="data1">
+                        <input type="date" name="dataInicio" id="dataInicio" required />
+                    </div>
+                    <div class="data2">
+                        <input type="date" name="dataFim" id="dataFim" required />
+                    </div>
+                </div>
+            </div>
+            <div class="Botao">
+                <button type="submit" id="BotaoP" class="btn btn-primary">Pesquisar</button>
+            </div>
+        </div>
+    </form>
+</div>
+

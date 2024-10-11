@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Adicionar Pacotes";
+    Layout = "~/Views/Shared/_Layout_dois.cshtml";
+}
+
+
+<div class="juntarbannerFechar" style="position: relative;">
+    <a asp-controller="Viagens" asp-action="Index"><i id="fechar" class="fa-solid fa-xmark mb-4"></i></a>
+    <div class="viagensBanner">
+        <img src="~/img/MocaIlha.jpg" class="d-block" alt="Imagem de Paisagem">
+    </div>
+</div>
+
+<h1 style="text-align: center;">Adicionar Novo Pacote</h1>
+
+<div class="add-pacote">
+    <form name="frmPesquisa" action="/pacotes" method="GET" onsubmit="return validateForm();">
+        <div class="ajustarforms">
+            <div class="Saida-destino">
+                <div class="sepDestiOri" id="datalistOrigem">
+                    <select class="numeroum form-control" id="origem" name="origem" placeholder="Origem" required>
+                        <option value="1">São Paulo</option>
+                        <option value="2">Chile</option>
+                        <option value="3">China</option>
+                        <option value="4">Brasilia</option>
+                    </select>
+                </div>
+                <div id="datalistDestino">
+                    <select class="numerodois form-control" id="destino" name="destino" placeholder="Destino" required>
+                        <option value="1" class="nacional">Rio de Janeiro</option>
+                        <option value="2" class="nacional">Salvador</option>
+                        <option value="3" class="internacional">Dubai</option>
+                        <option value="4" class="internacional">Chicago</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="RadioInterNac">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="tipoViagem" id="inlineRadio1" value="nacional" onclick="toggleDestinos();" checked>
+                    <label class="form-check-label" for="inlineRadio1">Nacionais</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="tipoViagem" id="inlineRadio2" value="internacional" onclick="toggleDestinos();">
+                    <label class="form-check-label" for="inlineRadio2">Internacionais</label>
+                </div>
+            </div>
+
+            <div class="emojiInput">
+                <i class="fas fa-user emoji"></i>
+                <input class="QuantPessoas" name="quantPessoas" type="number" step="1" value="2" min="1" required />
+            </div>
+
+            <div class="datas">
+                <div class="cor-fundo">
+                    <div class="data3">
+                        <input type="date" name="dataInicio" id="dataInicio" required />
+                    </div>
+                    <div class="data4">
+                        <input type="date" name="dataFim" id="dataFim" required />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="Botao1">
+                <button asp-area="" asp-troller="Home" asp-action="Index" id="login-submit-Cancelar1" class="btn btn-lg btn-primary">Cancelar</button>
+                    <button type="submit" id="BotaoP1">Adicionar</button>
+            </div>
+            </div>
+    </form>
+</div>
+
+<footer class="border-top footer text-muted">
+    <div class="icones">
+        <div class="footer-icons">
+            <a href="#" class="fab fa-instagram" style="color:black"></a>
+            <a href="#" class="fab fa-facebook-f" style="color:black"></a>
+            <a href="#" class="fab fa-whatsapp" style="color:black"></a>
+        </div>
+    </div>
+</footer>

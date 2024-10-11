@@ -1,0 +1,33 @@
+﻿@{
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout) && parentLayout !=  null)
+    {
+        Layout = parentLayout.ToString();
+    }
+    else
+    {
+        Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+    }
+}
+
+<div class="fundograd">
+
+    <div class="perfil-volta">
+        <a asp-area="" asp-controller="Home" asp-action="Index"><i id="voltarCeta" class="fa-solid fa-reply" style="color:black"></i></a>
+        <div class="patologoperfil">
+        <h1 class="logouser display-4 mb-0">AllVoyaje</h1>
+        <img src="~/img/PatoAll.png" class="patouser" alt="PatoLogo">
+        </div>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Passagens" asp-action="Index"><i id="Ticket" class="fa-solid fa-ticket" style=" color:black"></i></a>
+    </div>
+
+    <div class="row">
+        
+        <div class="col-md-9">
+            @RenderBody()
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}

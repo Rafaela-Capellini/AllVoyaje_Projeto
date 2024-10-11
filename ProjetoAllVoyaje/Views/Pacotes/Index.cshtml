@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Pacotes";
+    Layout = "~/Views/Shared/_Layout_dois.cshtml";
+}
+
+
+<div class="juntarbannerFechar" style="position: relative;">
+    <a asp-controller="Viagens" asp-action="Index"><i id="fechar" class="fa-solid fa-xmark mb-4"></i></a>
+    <div class="viagensBanner">
+        <img src="~/img/MocaIlha.jpg" class="d-block" alt="Imagem de Paisagem">
+    </div>
+</div>
+
+
+<div class="text-center d-flex align-items-center justify-content-center mb-5">
+    <h1 class="display-4 mb-1">AllVoyaje</h1>
+    <img src="~/img/PatoAll.png" class="ms-4" alt="PatoLogo" style="height: 70px; width: auto; margin-top: 10px;">
+</div>
+
+<a role="button" class="btn btn-primary mb-3" asp-controller="Pacotes" asp-action="Adicionar">Adicionar</a>
+
+
+@{
+    <div class="d-flex flex-wrap justify-content-center">
+    @for (int i=0; i<6; i++)
+    {
+        
+            <div class="card m-2" style="max-width: 540px;">
+                <div class="cardElement mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img id="cardImage" src="~/img/default.jpg" class="img-fluid rounded-start" alt="Imagem representativa do lugar escolhido" style="height:230px;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Informações da Viagem</h5>
+                                <p class="card-text" id="resultado"></p>
+                                <p class="card-text"><small class="text-body-secondary">Última atualização: agora</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+
+    }
+</div>
+}
+
+<footer class="border-top footer text-muted">
+    <div class="icones">
+        <div class="footer-icons">
+            <a href="#" class="fab fa-instagram" style="color:black"></a>
+            <a href="#" class="fab fa-facebook-f" style="color:black"></a>
+            <a href="#" class="fab fa-whatsapp" style="color:black"></a>
+        </div>
+    </div>
+</footer>
