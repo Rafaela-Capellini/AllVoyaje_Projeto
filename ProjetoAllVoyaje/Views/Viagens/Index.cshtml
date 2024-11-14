@@ -1,5 +1,10 @@
-﻿@{
+﻿@model IEnumerable<ProjetoAllVoyaje.Models.ImagemPacote>
+@{
     ViewData["Title"] = "Viagens";
+    
+    var destino = "";
+    var retorno = "";
+
 }
 
 <div class="containerHome">
@@ -9,42 +14,42 @@
 
     <h1 class="display-4 mb-0 text-center">Passagens</h1>
 
-    <form name="frmPesquisa" action="/pacotes" method="GET" onsubmit="return validateForm();">
-        <div class="Grupo-info">
+
+    <form name="frmPesquisa" class="frmPesquisa" method="GET">
+        <div class="Grupo-info ">
             <div class="Saida-destino1">
                 <div class="sepDestiOri1" id="datalistOrigem">
                     <select class="numeroum form-control" id="origem" name="origem" placeholder="Origem" required>
-                        <option value="1">São Paulo</option>
-                        <option value="2">Chile</option>
-                        <option value="3">China</option>
-                        <option value="4">Brasilia</option>
+                        <option value="Sao Paulo">São Paulo</option>
+                        <option value="Campinas">Campinas</option>
+                        <option value="Bauru">Bauru</option>
+                        <option value="Guarulhos">Igaraçu</option>
+                       
                     </select>
                 </div>
-                <div id="datalistDestino1">
+                <div id="datalistDestino1 ">
                     <select class="numerodois form-control" id="destino" name="destino" placeholder="Destino" required>
-                        <option value="1" class="nacional">Rio de Janeiro</option>
-                        <option value="2" class="nacional">Salvador</option>
-                        <option value="3" class="internacional">Dubai</option>
-                        <option value="4" class="internacional">Chicago</option>
+                        <option value="Parana" class="nacional">Parana</option>
+                        <option value="Ceara" class="nacional">Ceará</option>
+                        <option value="Goias" class="nacional">Goiás</option>
+                        <option value="Rio de Janeiro" class="internacional">Rio de Janeiro</option>
+                        <option value="Nova York" class="nacional">Nova York</option>
                     </select>
                 </div>
             </div>
 
-            <div class="NacInter1">
+            <div class="NacInter1 ">
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="tipoViagem" id="inlineRadio1" value="nacional" onclick="toggleDestinos();" checked>
+                    <input class="form-check-input" type="radio" name="tipoViagem" id="inlineRadio1" value="172A70C4-1085-42EF-B239-C43631C3F77C" onclick="toggleDestinos();" checked>
                     <label class="form-check-label" for="inlineRadio1">Nacionais</label>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="tipoViagem" id="inlineRadio2" value="internacional" onclick="toggleDestinos();">
+                <div class="form-check form-check-inline ">
+                    <input class="form-check-input" type="radio" name="tipoViagem" id="inlineRadio2" value="BAF3B655-4C52-48C4-9BE1-A0F8F8DA74DB" onclick="toggleDestinos();">
                     <label class="form-check-label" for="inlineRadio2">Internacionais</label>
                 </div>
             </div>
 
-            <div class="emojiInput1">
-                <i class="fas fa-user emoji"></i>
-                <input class="QuantPessoas1" name="quantPessoas" type="number" step="1" value="2" min="1" required />
-            </div>
+            
 
             <div class="datas1">
                 <div class="cor-fundo">
@@ -57,9 +62,42 @@
                 </div>
             </div>
             <div class="Botao">
-                <button type="submit" id="BotaoP" class="btn btn-primary">Pesquisar</button>
+                @* <button type="button" id="BotaoP" class="btn btn-primary" asp-controller="Viagens" asp-action="filtrar" onclick="validateForm();">Pesquisar</button> *@
+                <button type="submit" id="BotaoP" class="btn btn-primary" asp-controller="Viagens" asp-action="filtrar">Pesquisar</button>
             </div>
         </div>
     </form>
+
+    <div id="resultado" class=" d-flex flex-wrap justify-content-center">
+        @foreach (var item in Model)
+        {
+            <div class="row g-0" style="max-width: 480px; width: 100%;">
+            <div class="col-md-4 ">
+                @{
+                    List<ImagemPacote> imagens = ViewData["imagens"] as List<ImagemPacote>;
+                    var img = imagens.FirstOrDefault(i => i.PacoteViagemId == item.PacoteViagemId)?.URL ?? "/img/Mar.jpg";
+                }
+                <img class="card-img-top" src="@img" alt="Imagem representativa do lugar escolhido" style="object-fit: cover; height: 100%;">
+            </div>
+                        <div class="col-md-8" id="INFO">
+                            <div class="card-body">
+                    <h5 class="card-title">@item.PacoteViagem.NomePacote</h5>
+                    <p class="card-text"><strong>Hotel:</strong> @item.PacoteViagem.Hotel</p>
+                    <p class="card-text"><strong>Descrição:</strong> @item.PacoteViagem.Descricao</p>
+                    <p class="card-text"><strong>Tipo:</strong> @item.PacoteViagem.tipopacote.Tipo</p>
+                    <p class="card-text"><strong>Preço:</strong> @item.PacoteViagem.Preco</p>
+                            </div>
+                            <div class="text-end" id="ver" style="margin-right:10px; margin-bottom:10px">
+                    <a asp-action="Details" asp-controller="Pacotes" asp-route-id="@item.PacoteViagemId" class="btn Ver">Ver Mais</a>
+                            </div>
+                        </div>
+
+            </div>
+        }
+    </div>
+
+    
 </div>
+
+
 

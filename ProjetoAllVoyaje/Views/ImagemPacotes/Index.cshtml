@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ProjetoAllVoyaje.Models.ImagemPacote>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout_quatro.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <button id="BotaoCriar"><a asp-action="Create" class="btn">Criar Novo</a></button>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PacoteViagem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.URL)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PacoteViagem.NomePacote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.URL)
+            </td>
+            <td>
+                    <button id="Botaoeditar"><a asp-action="Edit" asp-route-id="@item.ImagemPacoteId" class="btn">Editar</a></button>
+                    <button id="Botaoeditar"><a asp-action="Details" asp-route-id="@item.ImagemPacoteId" class="btn">Detalhes</a></button>
+                    <button id="BotaoNormalDelete"><a asp-action="Delete" asp-route-id="@item.ImagemPacoteId" class="btn">Deletar</a></button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

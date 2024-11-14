@@ -1,0 +1,1505 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+    
+}
+
+/*.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Juntar_login{
+    display:flex
+}
+
+.mb-3 {
+    margin-bottom: 0rem !important;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #dee2e6 !important; 
+}
+
+viagensBanner {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.viagensBanner img {
+    width: 100%;
+    height: 450px; /* Ajuste conforme necessário */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    margin-bottom: 10px;
+}
+
+.align-left {
+    justify-content: end
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+   margin: 0px;
+   padding:0px;
+   
+
+
+}
+
+/* Remove a borda inferior da navbar */
+.navbar {
+    border-bottom: none;
+    margin-bottom: 0; /* Remove a margem inferior */
+    margin:0;
+}
+
+#engrenagem {
+    margin-left: 540px
+}
+
+/* Remove a margem e o padding do header */
+header {
+    margin: 0;
+    padding: 0;
+}
+
+   
+
+/* Centralizar o conteúdo da navbar */
+.navbar-nav {
+    text-align: center;
+    width: 100%;
+}
+
+    .navbar-nav .nav-item {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+footer {
+    padding: 0px;
+    background-color: #B0D4EE;
+    position: absolute;
+    bottom: 0;
+}
+
+
+.footer-icons {
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 200px;
+    color: #000
+}
+
+.icones {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.footer-icons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .footer-icons a {
+        font-size: 35px;
+        color: black;
+        text-decoration: none; /* Remove o sublinhado dos links */
+    }
+
+#resultado {
+    margin: 30px 0px 90px 0px
+}
+
+.TextoPropaganda {
+    margin: 90px 150px;
+}
+
+.textoProp {
+    margin-bottom: 30px;
+}
+
+.paragrafo {
+    padding: 50px;
+    margin: 0;
+    text-indent: 2em;
+    text-align:justify;
+}
+
+.viagens {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+    .viagens img {
+        width: 100%;
+        height: 340px; /* Ajuste conforme necessário */
+        object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+.bola {
+    border-radius: 50%;
+}
+
+.BolasPessoas {
+    display:flex;
+    margin: 0px 20px 60px 20px;
+   
+}
+
+.textoBola {
+    margin: 0 20px;
+    text-align:justify;
+}
+
+    .textoBola p {
+        margin: 0; 
+    }
+
+.Pessoas .d-flex {
+    gap: 20px; /* Espaço entre as imagens e o texto */
+}
+
+#pessoas2{
+    display:flex
+}
+
+#texto {
+    margin-top: 50px;
+    margin-left: 20px;
+    width: 600px;
+    font-size: 20px;
+    
+    text-align: justify;
+}
+
+#Propaganda{
+    width:50%
+}
+/*-------------------Perfil user------------------------*/
+.fundograd {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to right, #B0D4EE, #ffff);
+}
+
+.perfil-volta {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#voltarCeta {
+    margin: 30px 0px 30px 30px;
+    font-size: 30px;
+}
+
+#UserCadeado {
+    margin: 200px 0px 30px 30px;
+    font-size: 30px;
+}
+
+#Ticket {
+    margin: 30px 30px 30px 0px;
+    font-size: 30px;
+}
+
+.logouser {
+    margin: 30px 0px 30px 0px;
+}
+.patouser {
+    height: 70px;
+    width: auto;
+    margin: 30px 0px 30px 0px
+}
+
+.patologoperfil {
+    display: flex;
+}
+
+.perfilfoto {
+    height: 230px;
+    width: 250px;
+}
+
+.juntarperfil {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Espaçamento entre a foto e o formulário */
+    justify-content:center;
+    margin: 100px 0px 0px 250px
+}
+
+.form-controlLabel {
+    border-radius: 20px;
+    background-color: #E3EAEF;
+    height: 47px;
+    width: 370px;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    border: none;
+}
+
+.form-controlUser {
+    border-radius: 20px;
+    background-color: #B0D4EE;
+    height: 47px;
+    width: 370px;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    border: none;
+}
+
+.direcionamento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-floating {
+    width: 100%; /* Ajusta o formulário para usar toda a largura disponível */
+    max-width: 400px; /* Limita a largura do formulário */
+}
+
+.botaosalvar {
+    background-color: #9DC9E8;
+    color: #538AAF;
+    border: 0;
+    border-radius: 20px;
+    width: 370px;
+    height: 47px;
+    margin-top: 30px
+}
+
+.alert-success {
+    color: #000;
+    text-align: center;
+    font-size: 2rem;
+    background-color: #8fbedc;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.17rem black;
+    border-color: #338fc2;
+    width: 100%;
+    height: 100px;
+    margin: 0px 0px 0px 200px;
+}
+
+/*----------------------Duvidas--------------------------*/
+.accordion {
+    margin: 0px 100px 90px 100px;
+}
+
+.tituloduvidas{
+    text-align:center;
+    margin-bottom: 20px;
+}
+
+/*---------------------------------Cadastro------------------------------*/
+.fundo {
+    position: relative;
+    display: flex;
+    background-color: #B0D4EE;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.espacoBranco {
+    background-color: white;
+    border-radius: 34px;
+    margin: 200px 50px 0px 50px;
+    width: 400px;
+    height: auto;
+    z-index: 2; 
+    padding: 1rem; 
+}
+
+
+.patoelogo {
+    position: absolute;
+    z-index: 3;
+    margin-left: 140px;
+}
+
+    .patoelogo .logo {
+        display: block;
+        font-size: 50px;
+        text-decoration: none;
+        color: black;
+    }
+
+.pato {
+    display: block;
+    position: relative; 
+    width: 150px; 
+    margin-left: 40px;
+    margin-top: 15px;
+}
+
+
+.imagemMar {
+    width: 130%;
+    height: 120%;
+}
+
+
+.cadastroForms {
+    text-align: center;
+}
+
+
+.pb-3 {
+    padding-bottom: 0rem !important;
+}
+
+
+
+
+/*--------------Botoes--------------*/
+.mudabotao {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+#login-submit, #registerSubmit {
+    background-color: #6eaae8;
+    border: 0;
+    border-radius: 20px;
+    width: 124px;
+    height: 43px;
+}
+
+
+#BotaoNormal {
+    background-color: #6eaae8;
+    color: white;
+    border: 0;
+    border-radius: 20px;
+    width: 124px;
+    height: 43px;
+    text-decoration: none;
+}
+
+#BotaoNormalDelete {
+    background-color: #186BA8;
+    border: 0;
+    border-radius: 20px;
+    width: 124px;
+    height: 43px;
+    text-decoration: none;
+}
+
+#BotaoCriar {
+    background-color: #538AAF;
+    border: 0;
+    border-radius: 20px;
+    width: 124px;
+    height: 43px;
+    text-decoration: none;
+}
+
+#Botaoeditar {
+    background-color: #B0D4EE;
+    border: 0;
+    border-radius: 20px;
+    width: 124px;
+    height: 43px;
+    text-decoration: none;
+
+}
+
+#login-submit-Cancelar, #registerSubmit-Cancelar {
+    background-color: #dcdcdc;
+    color: black;
+    border: 0;
+    border-radius: 20px;
+    width: 124px;
+    height: 43px;
+}
+
+.esquecieCad {
+    text-align: center;
+    padding: 10px 0px 0px 0px;
+}
+
+    .esquecieCad a {
+        color: black;
+        text-decoration: none;
+    }
+
+.Botao {
+    /* Rever depois */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+}
+
+.pesquisar {
+    background-color: #186BA8;
+    border-radius: 10px;
+    border: 0px;
+    padding: 10px 20px; 
+    cursor: pointer; 
+    color: white;
+    margin-right: 15px
+}
+
+.pesquisar:hover {
+    background-color: #0e4b7f; 
+    transform: scale(1.05); 
+}
+
+#BotaoP {
+    background-color: #186BA8;
+    border: none;
+    border-radius: 20px;
+    margin-top:0
+}
+
+#BotaoP1 {
+    background-color: #186BA8;
+    color: white;
+    border: 0;
+    border-radius: 20px;
+    width: 124px;
+    height: 43px;
+    font-size: 19px;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 10px 20px; /* Ajusta o padding para melhorar a aparência */
+}
+
+#login-submit-Cancelar1 {
+    background-color: #dcdcdc;
+    color: black;
+    border: 0;
+    border-radius: 20px;
+    width: 124px;
+    height: 43px;
+    font-size: 19px;
+    padding: 10px 20px 20px; /* Ajusta o padding para melhorar a aparência */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    margin-bottom: 15px
+}
+
+.Comprar {
+    width: 160px;
+    background-color: #cacaca;
+    margin-left: 650px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    height: 50px;
+    align-content: center;
+    border: 0
+}
+/*----------------------------Viagens------------------------------*/
+.Grupo-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    width: 95%;
+    margin: 40px auto 100px auto;
+    background-color: #dde8ef;
+    border-radius:20px
+}
+
+.Saida-destino1 {
+    /*margin-top: 20px;*/
+    margin-left: 20px;
+    /* Rever depois */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    height: 200px;
+}
+
+.QuantPessoas1 {
+    border: 1px;
+    
+    height: 40px;
+    width: 50px;
+    text-align: center; /* Centraliza o texto */
+}
+
+.emojiInput1 {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    justify-content:center
+}
+
+.emoji {
+    margin-right: 3px; /* Espaçamento entre o ícone e o input */
+}
+
+
+.NacInter1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    height: 150px;
+}
+
+.sepDestiOri1 {
+    margin: 0px 10px 0px 10px;
+}
+
+.numeroum {
+    border: 0px;
+    height: 60px;
+    width: 145px
+}
+
+.numerodois {
+    border: 0px;
+    height: 60px;
+    width: 145px
+}
+
+.datas1 {
+    align-items: center;
+    /* Rever depois */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 150px;
+}
+
+
+
+input[type="date"] {
+    padding:20px; /* Aumenta o espaço interno do input */
+    font-size: 16px; /* Aumenta o tamanho da fonte */
+    border: 0px;
+    border-radius: 5px;
+    margin:5px;
+    width:250px
+}
+
+.cor-fundo{
+    display:flex;
+    padding:10px;
+    border-radius:10px
+}
+
+#resultado {
+    margin-bottom: 70px;
+    gap:10px
+}
+
+#INFO{
+    border:1px solid black
+}
+
+.modal-footer2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-right: 50px;
+    margin-bottom:30px;
+    
+
+    
+}
+
+.modal-footer3 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+    
+}
+
+.compra{
+background-color: #E4E4E4;
+padding:10px 30px 10px 30px;
+border-radius:20px;
+font-size:20px
+
+}
+
+.compra2 {
+    background-color: #E4E4E4;
+    padding: 10px 30px 10px 30px;
+    border-radius: 20px;
+    font-size: 25px
+}
+
+.comprar-questao{
+    font-size:70px
+}
+/*------------------Passagens--------------*/
+.linha {
+    width: 780px;
+    height: 3px;
+    background-color: black;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.preenchimento{
+    margin-left:460px;
+    justify-content:center;
+    align-items:center;
+    margin-top:100px
+}
+
+.recheio {
+    margin-left: 210px;
+}
+
+.realisar-compra{
+    margin-left:218px;
+    margin-bottom:10px
+}
+.realisar-compra2 {
+    margin-left: 187px;
+}
+.realisar-compra3 {
+    margin-left: 210px;
+}
+/*-------------------Pacotes-------------------*/
+.cardElement {
+    margin: 20px auto; /* Margem vertical e centraliza horizontalmente */
+    border: none;
+    background-color: #D9D9D9;
+    color: black;
+    height: 230px;
+}
+
+#fechar {
+    color: black;
+    position: absolute;
+    margin: 10px; /* Ajustado para ser mais uniforme */
+    z-index: 10;
+    font-size: 30px;
+}
+
+#informa {
+    margin: 20px auto; /* Centraliza o conteúdo */
+    max-width: 800px; /* Define uma largura máxima */
+}
+.imagem-movel {
+    width: 320px; /* Defina a largura desejada para o contêiner */
+    
+    border-radius:20px;
+}
+
+.imagem-pequena {
+    width: 100%; /* A imagem ocupará toda a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 20px;
+}
+
+
+.imagem-da-info {
+    width: 300px;
+    height: auto; /* Mantém a proporção da imagem */
+    display:flex
+}
+
+#info-coming {
+    font-size: 30px;
+    margin-left: 100px; /* Ajuste leve na margem */
+   
+}
+
+.Adicionais {
+    display:flex;
+    margin-left:510px;
+    font-size:20px;
+    text-align:center
+}
+
+.Adicionais2 {
+    display: flex;
+    margin-left: 500px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+    background-color: #6dbee6;
+    width: 460px;
+    height: 50px;
+    align-items: center;
+    border-radius: 10px;
+    color: aliceblue;
+    
+}
+
+
+.Ver {
+    background-color: #186BA8;
+    color:white;
+    border-radius: 20px;
+    border: 0
+}
+
+
+
+#icon-local {
+    width: 30px;
+    height: 30px
+}
+.Agora-junta{
+    display:flex
+}
+
+#Titulo-hotel {
+    font-size: 30px;
+    justify-content: center;
+    color: #1ea3e4;
+    padding-left: 150px
+}
+
+#Titulo-hotel2 {
+    color: #1ea3e4;
+    padding-left: 150px
+}
+
+    
+
+.custom-btn {
+    display: inline-block; /* Para que o link se comporte como um botão */
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Remove a borda */
+    color: black; /* Texto preto */
+    text-decoration: none; /* Remove sublinhado */
+    padding: 10px 20px; /* Adiciona espaçamento */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    transition: color 0.3s; /* Efeito suave ao passar o mouse */
+}
+
+    .custom-btn:hover {
+        color: #555; /* Cor do texto ao passar o mouse */
+    }
+
+#quantidade-pessoa{
+    width:100%
+}
+/*----------------------Esqeceu senha---------------*/
+.custom-button {
+    border: none;
+    border-radius: 20px;
+    color: white; /* Cor do texto */
+    background-color: #0056b3;
+}
+
+.custom-button:hover {
+    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+    border-color: #0056b3; /* Cor da borda do botão ao passar o mouse */
+}
+
+.custom-input{
+    border-radius: 20px;
+    justify-content: center;
+}
+
+.resetPassword{
+    margin: 25px 0px
+}
+
+.card-body {
+    height: 200px; /* Defina a altura que preferir */
+    display: flex;
+    flex-direction: column;
+    margin-left:10px
+
+   
+}
+
+.card-text {
+    flex-grow: 1; /* Isso faz com que o texto ocupe o espaço disponível */
+    overflow: hidden; /* Esconde o excesso de texto */
+    text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+}
+
+.btn {
+    margin-top: auto; /* Isso empurra o botão para o fundo do card */
+}
+
+
+.card {
+    flex-direction:row;
+        margin-bottom:0
+}
+
+
+
+/*-----------------PacoteCreate------------------*/
+.add-pacote {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens na vertical */
+}
+
+.ajustarforms {
+    width: 620px; /* Para garantir que a div preencha o espaço disponível */
+    margin: 0 auto; /* Centraliza a div no meio */
+    background-color: #dde8ef;
+    border-radius: 20px;
+    margin: 10px 0px 20px 0px
+}
+
+.Botao1 {
+    margin-left:190px;
+   
+}
+
+.add-pacote {
+    display: flex;
+    justify-content: flex-end; /* Move os itens para a direita */
+    align-items: center; /* Alinha verticalmente, se necessário */
+}
+
+.AgrupandoFormsPacote {
+    width: 100%; /* Para garantir que a div preencha o espaço disponível */
+    max-width: 600px; /* Limite a largura máxima, se desejado */
+    margin: 0; /* Remover margens para manter à direita */
+}
+
+.QuantPessoas {
+    border: 0px;
+    border-radius: 20px;
+    height: 40px;
+    width: 50px;
+    text-align: center; /* Centraliza o texto */
+    margin-bottom:30px
+}
+
+.datas {
+    display: flex;
+    margin-left:50px;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 150px;
+}
+
+.cor-fundo {
+    display: flex;
+    justify-content: space-between; /* Espaça as datas */
+    width: 100%; /* Para garantir que a div preencha o espaço disponível */
+    padding:0
+}
+
+.Saida-destino {
+    margin-left: 190px;
+    gap:20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    height: 200px;
+   
+   
+}
+
+.RadioInterNac {
+    margin-left: 170px
+}
+ 
+.emojiInput {
+    margin-left: 250px;
+    margin-top:50px
+}
+
+
+
+
+
+
+@media (max-width:576px) {
+    .containerHome {
+        display: block;
+    }
+
+    .viagensBanner {
+        width: 100%;
+    }
+
+    #famili {
+        display: block;
+    }
+
+    .BolasPessoas {
+        display: block;
+    }
+
+    #pessoas2 {
+        display: block;
+    }
+
+    #Propaganda {
+        width: 0px;
+    }
+
+    .paragrafo {
+        padding: 5px;
+    }
+
+    #icones {
+        align-content: space-between;
+    }
+
+    #engrenagem {
+        margin-left: 0px
+    }
+
+    .Grupo-info {
+        display: block;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        margin: 0px 0px;
+    }
+
+    .datas1 {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .cor-fundo {
+        display: block;
+        padding: 10px;
+        border-radius: 10px;
+        margin-left: 20%
+    }
+
+    .NacInter1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        gap: 20px
+    }
+
+    .Saida-destino1 {
+        margin-left: 0px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        margin-top: 30px
+    }
+
+
+
+    footer {
+        padding: 0px;
+        background-color: #B0D4EE;
+        position: absolute;
+        bottom: 0;
+    }
+
+
+    .footer-icons {
+        justify-content: space-between;
+        align-items: center;
+        margin: 0px 5px;
+        color: #000
+    }
+
+    .icones {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .footer-icons {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .footer-icons a {
+            font-size: 35px;
+            color: black;
+            text-decoration: none; /* Remove o sublinhado dos links */
+        }
+
+    #resultado {
+        margin: 30px 0px 90px 0px
+    }
+
+    .Adicionais2 {
+        margin-left: 20px;
+    }
+
+    .Comprar {
+        width: 160px;
+        background-color: #cacaca;
+        margin-left: 170px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        border-radius: 20px;
+        height: 50px;
+        align-content: center;
+        border: 0
+    }
+
+    #info-coming {
+        font-size: 20px;
+        margin-left: 30px; /* Ajuste leve na margem */
+    }
+
+    #Titulo-hotel {
+        font-size: 20px;
+        padding-left: 70px
+    }
+
+    #Titulo-hotel2 {
+        font-size: 15px;
+        padding-left: 55px
+    }
+
+    .Arruma-cara {
+        margin-top: 30px
+    }
+
+    #preconome {
+        margin-right: 20px;
+        margin-left: 20px
+    }
+
+    .Botao {
+        margin-left: 29%;
+        margin-top: 0px;
+        height: 60px
+    }
+
+    #texto {
+        margin-top: 50px;
+        margin-left: 20px;
+        width: 400px;
+        font-size: 20px;
+        text-align: justify;
+    }
+
+    #Propagand {
+        width: 300px;
+        margin-left: 20px
+    }
+
+    .preenchimento {
+        width: 100%;
+        margin: 0px
+    }
+
+    .comprar-questao {
+        margin-left: 70px;
+        font-size: 40px;
+        margin-top: 120px
+    }
+
+    .realisar-compra3 {
+        margin-left: 140px;
+        font-size: 30px;
+    }
+
+    .realisar-compra2 {
+        margin-left: 135px;
+        font-size: 20px;
+    }
+
+    .realisar-compra {
+        margin-left: 160px;
+        font-size: 20px;
+    }
+
+    .compra2 {
+        margin-top: 30px;
+        margin-left: 0px
+    }
+
+    .modal-footer3 {
+        margin-left: 0px
+    }
+
+    .fundograd {
+        margin: 0;
+        height: 100%;
+        background: linear-gradient(to right, #B0D4EE, #ffff);
+    }
+
+
+    .juntarperfil {
+        margin: 0px 0px 0px 50px;
+        width: 40%
+    }
+
+    .nav-link {
+        padding: 0
+    }
+
+    #Ticket {
+        margin: 0px;
+        padding: 0px;
+        width: 10px;
+        height: 10px;
+        margin-left: 50px
+    }
+
+    #voltarCeta {
+        margin-left: 30px;
+    }
+
+    .perfil-volta {
+        margin: 0px;
+        padding: 0px;
+        justify-content: start
+    }
+
+    .patologoperfil {
+        margin-top: 20px;
+        margin-left: 70px
+    }
+}
+
+@media ( max-width:992px) {
+    .containerHome {
+        display: block;
+    }
+
+    .viagensBanner {
+        width: 100%;
+    }
+
+    #famili {
+        display: block;
+    }
+
+    .BolasPessoas {
+        display: block;
+    }
+
+    #pessoas2 {
+        display: block;
+    }
+
+    #Propaganda {
+        width: 0px;
+    }
+
+    .paragrafo {
+        padding: 5px;
+    }
+
+    #icones {
+        align-content: space-between;
+    }
+
+    #engrenagem {
+        margin-left: 0px
+    }
+
+    .Grupo-info {
+        display: block;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        margin: 0px 0px;
+    }
+
+    .datas1 {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .cor-fundo {
+        display: block;
+        padding: 10px;
+        border-radius: 10px;
+        margin-left: 20%
+    }
+
+    .NacInter1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        gap: 20px
+    }
+
+    .Saida-destino1 {
+        margin-left: 0px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        margin-top: 30px
+    }
+
+
+
+    footer {
+        padding: 0px;
+        background-color: #B0D4EE;
+        position: absolute;
+        bottom: 0;
+    }
+
+
+    .footer-icons {
+        justify-content: space-between;
+        align-items: center;
+        margin: 0px 5px;
+        color: #000
+    }
+
+    .icones {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .footer-icons {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .footer-icons a {
+            font-size: 35px;
+            color: black;
+            text-decoration: none; /* Remove o sublinhado dos links */
+        }
+
+    #resultado {
+        margin: 30px 0px 90px 0px
+    }
+
+    .Adicionais2 {
+        margin-left: 0px;
+        width:100%
+    }
+
+    .Comprar {
+        width: 160px;
+        background-color: #cacaca;
+        margin-left: 170px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        border-radius: 20px;
+        height: 50px;
+        align-content: center;
+        border: 0
+    }
+
+    #info-coming {
+        font-size: 20px;
+        margin-left: 30px; /* Ajuste leve na margem */
+    }
+
+    #Titulo-hotel {
+        font-size: 20px;
+        padding-left: 70px
+    }
+
+    #Titulo-hotel2 {
+        font-size: 15px;
+        padding-left: 55px
+    }
+
+    .Arruma-cara {
+        margin-top: 30px
+    }
+
+    #preconome {
+        margin-right: 20px;
+        margin-left: 20px
+    }
+
+    .Botao {
+        margin-left: 29%;
+        margin-top: 0px;
+        height: 60px
+    }
+
+    #texto {
+        margin-top: 50px;
+        margin-left: 10px;
+        margin-right: 15px;
+        width: 400px;
+        font-size: 15px;
+        text-align: justify;
+
+    }
+
+    .m-3 {
+        margin: 0rem !important;
+    }
+    #Propagand {
+        width: 50px;
+        margin-left: 20px
+    }
+
+    .preenchimento {
+        width: 100%;
+        margin: 0px
+    }
+
+    .comprar-questao {
+        margin-left: 70px;
+        font-size: 40px;
+        margin-top: 120px
+    }
+
+    .realisar-compra3 {
+        margin-left: 140px;
+        font-size: 30px;
+    }
+
+    .realisar-compra2 {
+        margin-left: 135px;
+        font-size: 20px;
+    }
+
+    .realisar-compra {
+        margin-left: 160px;
+        font-size: 20px;
+    }
+
+    .compra2 {
+        margin-top: 30px;
+        margin-left: 0px
+    }
+
+    .modal-footer3 {
+        margin-left: 0px
+    }
+
+    .fundograd {
+        margin: 0;
+        height: 100%;
+        background: linear-gradient(to right, #B0D4EE, #ffff);
+    }
+
+
+    .juntarperfil {
+        margin: 0px 0px 0px 50px;
+        width: 40%
+    }
+
+    .nav-link {
+        padding: 0
+    }
+
+    #Ticket {
+        margin: 0px;
+        padding: 0px;
+        width: 10px;
+        height: 10px;
+        margin-left: 50px
+    }
+
+    #voltarCeta {
+        margin-left: 30px;
+    }
+
+    .perfil-volta {
+        margin: 0px;
+        padding: 0px;
+        justify-content: start
+    }
+
+    .patologoperfil {
+        margin-top: 20px;
+        margin-left: 70px;
+        
+       
+    }
+
+    .fundograd {
+        margin: 0;
+        height: 111vh;
+        background: linear-gradient(to right, #B0D4EE, #ffff);
+    }
+
+    .patouser{
+        width:70px;
+        height:50px
+    }
+
+    .perfilfoto {
+        height: 200px;
+        width: 200px;
+        margin-left:200px
+    }
+
+    #recheio{
+        display:flex;
+        margin-right:100px
+    }
+
+    .juntarperfil {
+        display: flex;
+        align-items: center;
+        gap: 50px; /* Espaçamento entre a foto e o formulário */
+        justify-content: center;
+        margin-left: 20px
+    }
+
+    #UserCadeado {
+        margin: 400px 0px 30px 30px;
+        font-size: 30px;
+    }
+
+    
+}
+
+
+
+
+
+
+

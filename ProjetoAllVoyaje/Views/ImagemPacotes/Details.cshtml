@@ -1,0 +1,31 @@
+﻿@model ProjetoAllVoyaje.Models.ImagemPacote
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout_quatro.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ImagemPacote</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PacoteViagem)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PacoteViagem.PacoteViagemId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.URL)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.URL)
+        </dd>
+    </dl>
+</div>
+<div>
+    <button id="Botaoeditar"><a asp-action="Edit" asp-route-id="@Model?.ImagemPacoteId" class="btn">Editar</a></button>
+    <a asp-action="Index" style="text-decoration: none; color: black">Voltar para a Lista</a>
+</div>

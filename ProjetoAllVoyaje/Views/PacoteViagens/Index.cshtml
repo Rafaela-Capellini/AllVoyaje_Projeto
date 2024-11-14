@@ -1,0 +1,72 @@
+﻿@model IEnumerable<ProjetoAllVoyaje.Models.PacoteViagem>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout_quatro.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <button id="BotaoCriar"><a asp-action="Create" class="btn">Criar Novo</a></button>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomePacote)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hotel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tipopacote.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataSaida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataRetorno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preco)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomePacote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hotel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipopacote.Tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataSaida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataRetorno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preco)
+            </td>
+            <td>
+                    <button id="Botaoeditar"><a asp-action="Edit" asp-route-id="@item.PacoteViagemId" class="btn">Editar</a></button>
+                    <button id="Botaoeditar"><a asp-action="Details" asp-route-id="@item.PacoteViagemId" class="btn">Detalhes</a></button>
+                    <button id="BotaoNormalDelete"><a asp-action="Delete" asp-route-id="@item.PacoteViagemId" class="btn">Deletar</a></button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

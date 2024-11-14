@@ -56,6 +56,8 @@ html {
 body {
    margin: 0px;
    padding:0px;
+   
+
 
 }
 
@@ -89,44 +91,52 @@ header {
         margin-right: auto;
     }
 
-/* Estilizar o footer */
 footer {
     padding: 0px;
     background-color: #B0D4EE;
+    position: absolute;
+    bottom: 0;
 }
 
 
 .footer-icons {
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     margin: 0px 200px;
-    color:#000
+    color: #000
 }
 
 .icones {
     display: flex;
-    justify-content: center; 
-    padding: 10px 0; 
+    justify-content: center;
+    padding: 10px 0;
 }
 
 .footer-icons {
     display: flex;
     width: 100%;
-    justify-content: space-between; 
-    align-items: center; 
+    justify-content: space-between;
+    align-items: center;
 }
 
-.footer-icons a {
-    font-size: 35px; 
-    color: black;
-    text-decoration: none; /* Remove o sublinhado dos links */
+    .footer-icons a {
+        font-size: 35px;
+        color: black;
+        text-decoration: none; /* Remove o sublinhado dos links */
+    }
+
+#resultado {
+    margin: 30px 0px 90px 0px
 }
 
-.containerHome {
-    padding: 0;
-    margin: 0 ;
-    /* max-width: 1200px; /* Ajuste conforme necessário */
-    width: 100%
+.cardImage {
+    height: 230px; /* Altura fixa para a imagem */
+    width: 100%; /* Largura total da coluna */
+    object-fit: cover; /* Corta a imagem se necessário */
+}
+
+.card {
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse a altura do card */
 }
 
 .TextoPropaganda {
@@ -163,6 +173,7 @@ footer {
 }
 
 .BolasPessoas {
+    display:flex;
     margin: 0px 20px 60px 20px;
    
 }
@@ -180,7 +191,22 @@ footer {
     gap: 20px; /* Espaço entre as imagens e o texto */
 }
 
+#pessoas2{
+    display:flex
+}
 
+#texto {
+    margin-top: 50px;
+    margin-left: 20px;
+    width: 600px;
+    font-size: 20px;
+    
+    text-align: justify;
+}
+
+#Propaganda{
+    width:50%
+}
 /*-------------------Perfil user------------------------*/
 .fundograd {
     margin: 0;
@@ -200,9 +226,14 @@ footer {
     font-size: 30px;
 }
 
+#UserCadeado {
+    margin: 200px 0px 30px 30px;
+    font-size: 30px;
+}
+
 #Ticket {
     margin: 30px 30px 30px 0px;
-    font-size: 30px; 
+    font-size: 30px;
 }
 
 .logouser {
@@ -282,6 +313,12 @@ footer {
     width: 100%;
     height: 100px;
     margin: 0px 0px 0px 200px;
+}
+
+#Propaganda2 {
+    width: 900px;
+    height: 400px;
+    border-radius: 5px;
 }
 
 /*----------------------Duvidas--------------------------*/
@@ -372,6 +409,45 @@ footer {
     height: 43px;
 }
 
+
+#BotaoNormal {
+    background-color: #6eaae8;
+    color: white;
+    border: 0;
+    border-radius: 20px;
+    width: 124px;
+    height: 43px;
+    text-decoration: none;
+}
+
+#BotaoNormalDelete {
+    background-color: #186BA8;
+    border: 0;
+    border-radius: 20px;
+    width: 124px;
+    height: 43px;
+    text-decoration: none;
+}
+
+#BotaoCriar {
+    background-color: #538AAF;
+    border: 0;
+    border-radius: 20px;
+    width: 124px;
+    height: 43px;
+    text-decoration: none;
+}
+
+#Botaoeditar {
+    background-color: #B0D4EE;
+    border: 0;
+    border-radius: 20px;
+    width: 124px;
+    height: 43px;
+    text-decoration: none;
+
+}
+
 #login-submit-Cancelar, #registerSubmit-Cancelar {
     background-color: #dcdcdc;
     color: black;
@@ -418,7 +494,8 @@ footer {
 #BotaoP {
     background-color: #186BA8;
     border: none;
-    border-radius: 20px
+    border-radius: 20px;
+    margin-top:0
 }
 
 #BotaoP1 {
@@ -447,6 +524,18 @@ footer {
     align-items: center; /* Centraliza verticalmente */
     margin-bottom: 15px
 }
+
+.Comprar {
+    width: 160px;
+    background-color: #cacaca;
+    margin-left: 650px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    height: 50px;
+    align-content: center;
+    border: 0
+}
 /*----------------------------Viagens------------------------------*/
 .Grupo-info {
     display: flex;
@@ -454,8 +543,9 @@ footer {
     align-items: center;
     height: 200px;
     width: 95%;
-    margin: 40px auto 150px auto;
+    margin: 40px auto 100px auto;
     background-color: #dde8ef;
+    border-radius:20px
 }
 
 .Saida-destino1 {
@@ -470,8 +560,8 @@ footer {
 }
 
 .QuantPessoas1 {
-    border: 0px;
-    border-radius: 20px;
+    border: 1px;
+    
     height: 40px;
     width: 50px;
     text-align: center; /* Centraliza o texto */
@@ -480,6 +570,7 @@ footer {
 .emojiInput1 {
     display: flex;
     align-items: center; /* Alinha verticalmente */
+    justify-content:center
 }
 
 .emoji {
@@ -515,10 +606,12 @@ footer {
     align-items: center;
     /* Rever depois */
     display: flex;
-    justify-content: center;
+   
     align-items: center;
     width: 45%;
-    height: 150px;
+    height: 200px;
+
+    
 }
 
 
@@ -538,22 +631,93 @@ input[type="date"] {
     border-radius:10px
 }
 
-
-/*------------------Passagens--------------*/
-
-.linha {
-    width: 780px; 
-    height: 3px; 
-    background-color: black; 
-    margin: 0 auto; 
-    margin-top: 20px; 
-    margin-bottom: 20px; 
+#resultado {
+    margin-bottom: 70px;
+    gap:10px
 }
 
+#INFO{
+    border:1px solid black
+}
 
+.modal-footer2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-right: 50px;
+    margin-bottom:30px;
+    
+
+    
+}
+
+.modal-footer3 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+    
+}
+
+.compra{
+background-color: #E4E4E4;
+padding:10px 30px 10px 30px;
+border-radius:20px;
+font-size:20px
+
+}
+
+.compra2 {
+    background-color: #E4E4E4;
+    padding: 10px 30px 10px 30px;
+    border-radius: 20px;
+    font-size: 25px
+}
+
+.comprar-questao{
+    font-size:70px
+}
+/*------------------Passagens--------------*/
+.linha {
+    width: 780px;
+    height: 3px;
+    background-color: black;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.preenchimento{
+    margin-left:460px;
+    justify-content:center;
+    align-items:center;
+    margin-top:100px
+}
+
+.recheio {
+    margin-left: 210px;
+}
+
+.realisar-compra{
+    margin-left:218px;
+    margin-bottom:10px
+}
+.realisar-compra2 {
+    margin-left: 187px;
+}
+.realisar-compra3 {
+    margin-left: 210px;
+}
 /*-------------------Pacotes-------------------*/
 .cardElement {
-    margin-top: 130px 0px 20px 200px;
+    margin: 20px auto; /* Margem vertical e centraliza horizontalmente */
     border: none;
     background-color: #D9D9D9;
     color: black;
@@ -563,16 +727,114 @@ input[type="date"] {
 #fechar {
     color: black;
     position: absolute;
-    margin: 10px 0px 0px 20px;
+    margin: 10px; /* Ajustado para ser mais uniforme */
     z-index: 10;
     font-size: 30px;
 }
 
+#informa {
+    margin: 20px auto; /* Centraliza o conteúdo */
+    max-width: 800px; /* Define uma largura máxima */
+}
+.imagem-movel {
+    width: 320px; /* Defina a largura desejada para o contêiner */
+    
+    border-radius:20px;
+}
+
+.imagem-pequena {
+    width: 100%; /* A imagem ocupará toda a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 20px;
+}
+
+
+.imagem-da-info {
+    width: 300px;
+    height: auto; /* Mantém a proporção da imagem */
+    display:flex
+}
+
+#info-coming {
+    font-size: 30px;
+    margin-left: 100px; /* Ajuste leve na margem */
+   
+}
+
+.Adicionais {
+    display:flex;
+    margin-left:510px;
+    font-size:20px;
+    text-align:center
+}
+
+.Adicionais2 {
+    display: flex;
+    margin-left: 500px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+    background-color: #6dbee6;
+    width: 460px;
+    height: 50px;
+    align-items: center;
+    border-radius: 10px;
+    color: aliceblue;
+    
+}
+
+
+.Ver {
+    background-color: #186BA8;
+    color:white;
+    border-radius: 20px;
+    border: 0
+}
 
 
 
+#icon-local {
+    width: 30px;
+    height: 30px
+}
+.Agora-junta{
+    display:flex
+}
+
+#Titulo-hotel {
+    font-size: 30px;
+    justify-content: center;
+    color: #1ea3e4;
+    padding-left: 150px
+}
+
+#Titulo-hotel2 {
+    color: #1ea3e4;
+    padding-left: 150px
+}
+
+    
+
+.custom-btn {
+    display: inline-block; /* Para que o link se comporte como um botão */
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Remove a borda */
+    color: black; /* Texto preto */
+    text-decoration: none; /* Remove sublinhado */
+    padding: 10px 20px; /* Adiciona espaçamento */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    transition: color 0.3s; /* Efeito suave ao passar o mouse */
+}
+
+    .custom-btn:hover {
+        color: #555; /* Cor do texto ao passar o mouse */
+    }
+
+#quantidade-pessoa{
+    width:100%
+}
 /*----------------------Esqeceu senha---------------*/
-
 .custom-button {
     border: none;
     border-radius: 20px;
@@ -594,8 +856,34 @@ input[type="date"] {
     margin: 25px 0px
 }
 
-/*-----------------PacoteCreate------------------*/
+.card-body {
+    height: 200px; /* Defina a altura que preferir */
+    display: flex;
+    flex-direction: column;
+    margin-left:10px
 
+   
+}
+
+.card-text {
+    flex-grow: 1; /* Isso faz com que o texto ocupe o espaço disponível */
+    overflow: hidden; /* Esconde o excesso de texto */
+    text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+}
+
+.btn {
+    margin-top: auto; /* Isso empurra o botão para o fundo do card */
+}
+
+
+.card {
+    flex-direction:row;
+        margin-bottom:0
+}
+
+
+
+/*-----------------PacoteCreate------------------*/
 .add-pacote {
     display: flex;
     flex-direction: column;
@@ -636,19 +924,12 @@ input[type="date"] {
     margin-bottom:30px
 }
 
-.datas {
-    display: flex;
-    margin-left:50px;
-    justify-content: center;
-    align-items: center;
-    width: 45%;
-    height: 150px;
-}
+
 
 .cor-fundo {
     display: flex;
     justify-content: space-between; /* Espaça as datas */
-    width: 100%; /* Para garantir que a div preencha o espaço disponível */
+    width: 0px; /* Para garantir que a div preencha o espaço disponível */
     padding:0
 }
 
@@ -673,15 +954,585 @@ input[type="date"] {
     margin-top:50px
 }
 
-Grupo-info {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 200px;
-    width: 95%;
-    margin: 40px auto 150px auto;
-    background-color: #dde8ef;
+
+
+
+
+
+@media (max-width:576px) {
+    .containerHome {
+        display: block;
+    }
+
+    .viagensBanner {
+        width: 100%;
+    }
+
+    #famili {
+        display: block;
+    }
+
+    .BolasPessoas {
+        display: block;
+    }
+
+    #pessoas2 {
+        display: block;
+    }
+
+    #Propaganda {
+        width: 0px;
+    }
+
+    .paragrafo {
+        padding: 5px;
+    }
+
+    #icones {
+        align-content: space-between;
+    }
+
+    #engrenagem {
+        margin-left: 0px
+    }
+
+    .Grupo-info {
+        display: block;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        margin: 0px 0px;
+    }
+
+    .datas1 {
+        width: 100%;
+        height: 100%;
+        
+    }
+
+
+    .cor-fundo {
+        display: block;
+        padding: 10px;
+        border-radius: 10px;
+        margin-left: 20%
+    }
+
+    .NacInter1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        gap: 20px
+    }
+
+    .Saida-destino1 {
+        margin-left: 0px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        margin-top: 30px
+    }
+
+
+
+    footer {
+        padding: 0px;
+        background-color: #B0D4EE;
+        position: absolute;
+        bottom: 0;
+    }
+
+
+    .footer-icons {
+        justify-content: space-between;
+        align-items: center;
+        margin: 0px 5px;
+        color: #000
+    }
+
+    .icones {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .footer-icons {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .footer-icons a {
+            font-size: 35px;
+            color: black;
+            text-decoration: none; /* Remove o sublinhado dos links */
+        }
+
+    #resultado {
+        margin: 30px 0px 90px 0px
+    }
+
+    .Adicionais2 {
+        margin-left: 20px;
+    }
+
+    .Comprar {
+        width: 160px;
+        background-color: #cacaca;
+        margin-left: 170px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        border-radius: 20px;
+        height: 50px;
+        align-content: center;
+        border: 0
+    }
+
+    #info-coming {
+        font-size: 20px;
+        margin-left: 30px; /* Ajuste leve na margem */
+    }
+
+    #Titulo-hotel {
+        font-size: 20px;
+        padding-left: 70px
+    }
+
+    #Titulo-hotel2 {
+        font-size: 15px;
+        padding-left: 55px
+    }
+
+    .Arruma-cara {
+        margin-top: 30px
+    }
+
+    #preconome {
+        margin-right: 20px;
+        margin-left: 20px
+    }
+
+    .Botao {
+        width:100%;
+        margin-top: 0px;
+        height: 60px
+    }
+
+    #texto {
+        margin-top: 50px;
+        margin-left: 20px;
+        width: 400px;
+        font-size: 20px;
+        text-align: justify;
+    }
+
+    #Propagand {
+        width: 300px;
+        margin-left: 20px
+    }
+
+    .preenchimento {
+        width: 100%;
+        margin: 0px
+    }
+
+    .comprar-questao {
+        margin-left: 70px;
+        font-size: 40px;
+        margin-top: 120px
+    }
+
+    .realisar-compra3 {
+        margin-left: 140px;
+        font-size: 30px;
+    }
+
+    .realisar-compra2 {
+        margin-left: 135px;
+        font-size: 20px;
+    }
+
+    .realisar-compra {
+        margin-left: 160px;
+        font-size: 20px;
+    }
+
+    .compra2 {
+        margin-top: 30px;
+        margin-left: 0px
+    }
+
+    .modal-footer3 {
+        margin-left: 0px
+    }
+
+    .fundograd {
+        margin: 0;
+        height: 111vh;
+        background: linear-gradient(to right, #B0D4EE, #ffff);
+    }
+
+
+    .juntarperfil {
+        margin: 0px 0px 0px 50px;
+        width: 400%
+    }
+
+    .nav-link {
+        padding: 0
+    }
+
+    #Ticket {
+        margin: 0px;
+        padding: 0px;
+        width: 10px;
+        height: 10px;
+        margin-left: 50px
+    }
+
+    #voltarCeta {
+        margin-left: 30px;
+    }
+
+    .perfil-volta {
+        margin: 0px;
+        padding: 0px;
+        justify-content: start
+    }
+
+    .patologoperfil {
+        margin-top: 20px;
+        margin-left: 70px
+    }
+
+ 
+
 }
+
+
+
+    @media ( max-width:992px) {
+        .containerHome {
+            display: block;
+        }
+
+        .viagensBanner {
+            width: 100%;
+        }
+
+        #famili {
+            display: block;
+        }
+
+        .BolasPessoas {
+            display: block;
+        }
+
+        #pessoas2 {
+            display: block;
+        }
+
+        #Propaganda {
+            width: 0px;
+        }
+
+        .paragrafo {
+            padding: 5px;
+        }
+
+        #icones {
+            align-content: space-between;
+        }
+
+        #engrenagem {
+            margin-left: 0px
+        }
+
+        .Grupo-info {
+            display: block;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            margin: 0px 0px;
+        }
+
+        .datas1 {
+           
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .cor-fundo {
+            display: block;
+            padding: 10px;
+            border-radius: 10px;
+            margin-left: 15%
+        }
+
+        .NacInter1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            gap: 20px
+        }
+
+        .Saida-destino1 {
+            margin-left: 0px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            margin-top: 30px
+        }
+
+
+
+        footer {
+            padding: 0px;
+            background-color: #B0D4EE;
+            position: absolute;
+            bottom: 0;
+        }
+
+
+        .footer-icons {
+            justify-content: space-between;
+            align-items: center;
+            margin: 0px 5px;
+            color: #000
+        }
+
+        .icones {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        .footer-icons {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .footer-icons a {
+                font-size: 35px;
+                color: black;
+                text-decoration: none; /* Remove o sublinhado dos links */
+            }
+
+        #resultado {
+            margin: 30px 0px 90px 0px
+        }
+
+        .Adicionais2 {
+            margin-left: 0px;
+            width: 100%
+        }
+
+        .Comprar {
+            width: 160px;
+            background-color: #cacaca;
+            margin-left: 170px;
+            margin-top: 30px;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            height: 50px;
+            align-content: center;
+            border: 0
+        }
+
+        #info-coming {
+            font-size: 20px;
+            margin-left: 30px; /* Ajuste leve na margem */
+        }
+
+        #Titulo-hotel {
+            font-size: 20px;
+            padding-left: 70px
+        }
+
+        #Titulo-hotel2 {
+            font-size: 15px;
+            padding-left: 55px
+        }
+
+        .Arruma-cara {
+            margin-top: 30px
+        }
+
+        #preconome {
+            margin-right: 20px;
+            margin-left: 20px
+        }
+
+     
+
+        #texto {
+            margin-top: 50px;
+            margin-right: 15px;
+            width: 340px;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        .m-3 {
+            margin: 0rem !important;
+        }
+
+        #Propagand {
+            width: 50px;
+            margin-left: 20px
+        }
+
+        .preenchimento {
+            width: 100%;
+            margin: 0px
+        }
+
+        .comprar-questao {
+            margin-left: 70px;
+            font-size: 40px;
+            margin-top: 120px
+        }
+
+        .realisar-compra3 {
+            margin-left: 140px;
+            font-size: 30px;
+        }
+
+        .realisar-compra2 {
+            margin-left: 135px;
+            font-size: 20px;
+        }
+
+        .realisar-compra {
+            margin-left: 160px;
+            font-size: 20px;
+        }
+
+        .compra2 {
+            margin-top: 30px;
+            margin-left: 0px
+        }
+
+        .modal-footer3 {
+            margin-left: 0px
+        }
+
+
+
+
+        
+
+        .nav-link {
+            padding: 0
+        }
+
+        #Ticket {
+            margin: 0px;
+            padding: 0px;
+            width: 10px;
+            height: 10px;
+            margin-left: 30px
+        }
+
+        #voltarCeta {
+            margin-left: 30px;
+        }
+
+        .perfil-volta {
+            margin: 0px;
+            padding: 0px;
+            justify-content: start
+        }
+
+        .patologoperfil {
+            margin-top: 20px;
+            margin-left: 70px;
+        }
+
+        .fundograd {
+            margin: 0;
+            height: 111vh;
+            background: linear-gradient(to right, #B0D4EE, #ffff);
+        }
+
+        .patouser {
+            width: 70px;
+            height: 50px
+        }
+
+        .perfilfoto {
+            height: 300px;
+            width: 300px;
+            margin-left: 50px
+        }
+
+        #recheio {
+            display: flex;
+            margin-right: 100px;
+            width:100px
+            
+        }
+
+        .juntarperfil {
+            display: flex;
+            align-items: center;
+            gap: 0px; /* Espaçamento entre a foto e o formulário */
+            justify-content: center;
+            margin: 0px 0px 0px 20px
+        }
+
+        #UserCadeado {
+            margin: 100px 0px 30px 30px;
+            font-size: 30px;
+        }
+
+        #Propaganda {
+            width: 100%
+        }
+
+        #Propaganda2 {
+            height: 300px
+        }
+
+        #pessoas2 {
+            margin-bottom: 100px
+        }
+
+        .viagens img {
+            margin-top: 0px;
+        }
+
+        
+
+        
+
+        .cor-fundo {
+            display: block;
+            justify-content: center;
+            align-items: center;
+            width: 0px;
+            height: 100%;
+            gap: 20px
+        }
+
+        .card {
+            flex-direction: column;
+            width: 95%;
+            
+        }
+    }
 
 
 

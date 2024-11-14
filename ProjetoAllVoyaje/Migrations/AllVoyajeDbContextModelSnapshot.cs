@@ -28,7 +28,15 @@ namespace ProjetoAllVoyaje.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("AspNetUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("CPF")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cargo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -45,29 +53,23 @@ namespace ProjetoAllVoyaje.Migrations
                     b.ToTable("tbClientes", (string)null);
                 });
 
-            modelBuilder.Entity("ProjetoAllVoyaje.Models.OpcoesDatas", b =>
+            modelBuilder.Entity("ProjetoAllVoyaje.Models.ImagemPacote", b =>
                 {
-                    b.Property<Guid>("OpcoesDatasId")
+                    b.Property<Guid>("ImagemPacoteId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateOnly>("DataRetorno")
-                        .HasColumnType("date");
-
-                    b.Property<DateOnly>("DataSaida")
-                        .HasColumnType("date");
 
                     b.Property<Guid>("PacoteViagemId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("Preco")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<string>("URL")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("OpcoesDatasId");
+                    b.HasKey("ImagemPacoteId");
 
                     b.HasIndex("PacoteViagemId");
 
-                    b.ToTable("tbOpcoesDatas", (string)null);
+                    b.ToTable("tbImagemPacote", (string)null);
                 });
 
             modelBuilder.Entity("ProjetoAllVoyaje.Models.PacoteCliente", b =>
@@ -79,17 +81,17 @@ namespace ProjetoAllVoyaje.Migrations
                     b.Property<Guid>("ClienteId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("PacoteViagemId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("QtdPessoas")
                         .HasColumnType("int");
-
-                    b.Property<Guid>("TipoPacoteId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("PacoteClienteId");
 
                     b.HasIndex("ClienteId");
 
-                    b.HasIndex("TipoPacoteId");
+                    b.HasIndex("PacoteViagemId");
 
                     b.ToTable("tbPacoteClientes", (string)null);
                 });
@@ -100,7 +102,21 @@ namespace ProjetoAllVoyaje.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateOnly>("DataRetorno")
+                        .HasColumnType("date");
+
+                    b.Property<DateOnly>("DataSaida")
+                        .HasColumnType("date");
+
                     b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Hotel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NomePacote")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -132,7 +148,7 @@ namespace ProjetoAllVoyaje.Migrations
                     b.ToTable("tbTiposPacotes", (string)null);
                 });
 
-            modelBuilder.Entity("ProjetoAllVoyaje.Models.OpcoesDatas", b =>
+            modelBuilder.Entity("ProjetoAllVoyaje.Models.ImagemPacote", b =>
                 {
                     b.HasOne("ProjetoAllVoyaje.Models.PacoteViagem", "PacoteViagem")
                         .WithMany()
@@ -151,15 +167,15 @@ namespace ProjetoAllVoyaje.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProjetoAllVoyaje.Models.TipoPacote", "TipoPacote")
+                    b.HasOne("ProjetoAllVoyaje.Models.PacoteViagem", "Pacote")
                         .WithMany()
-                        .HasForeignKey("TipoPacoteId")
+                        .HasForeignKey("PacoteViagemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Cliente");
 
-                    b.Navigation("TipoPacote");
+                    b.Navigation("Pacote");
                 });
 
             modelBuilder.Entity("ProjetoAllVoyaje.Models.PacoteViagem", b =>

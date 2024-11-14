@@ -1,0 +1,39 @@
+﻿@model ProjetoAllVoyaje.Models.PacoteCliente
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>PacoteCliente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ClienteId" class="control-label"></label>
+                <select asp-for="ClienteId" class ="form-control" asp-items="ViewBag.ClienteId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PacoteViagemId" class="control-label"></label>
+                <select asp-for="PacoteViagemId" class ="form-control" asp-items="ViewBag.PacoteViagemId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtdPessoas" class="control-label"></label>
+                <input asp-for="QtdPessoas" class="form-control" />
+                <span asp-validation-for="QtdPessoas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" id="BotaoCriar" value="Adicionar" class="btn btn-primary" />
+                <a asp-action="Index" style="text-decoration: none; color: black">Voltar para a Lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

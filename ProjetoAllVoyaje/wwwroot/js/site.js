@@ -35,13 +35,16 @@ function validatePhone(input) {
 /******* função para testar inputs do filtssro ******/
 
 function validateForm() {
+    // Remover isso
+    return true;
+
     const origem = document.getElementById('origem').value;
     const destino = document.getElementById('destino').value;
-    const quantPessoas = document.querySelector('input[name="quantPessoas"]').value;
+    //const quantPessoas = document.querySelector('input[name="quantPessoas"]').value;
     const dataInicio = document.getElementById('dataInicio').value;
     const dataFim = document.getElementById('dataFim').value;
 
-    if (!origem || !destino || !quantPessoas || !dataInicio || !dataFim) {
+    if (!origem || !destino || !dataInicio || !dataFim) {
         alert("Por favor, preencha todos os campos.");
         return false; // Impede o envio do formulário
     }
@@ -82,44 +85,7 @@ window.onload = function () {
     const dataFim = params.get('dataFim');
     const quantPessoas = params.get('quantPessoas');
 
-    // Mapeamento das origens e destinos
-    const origens = {
-        "1": "São Paulo",
-        "2": "Chile",
-        "3": "China",
-        "4": "Brasilia"
-    };
 
-    const destinos = {
-        "1": "Rio de Janeiro",
-        "2": "Salvador",
-        "3": "Dubai",
-        "4": "Chicago"
-    };
-
-    // Mapeamento de imagens
-    const imagens = {
-        "1": "../img/SaoPaulo.jpg", // Imagem para São Paulo
-        "2": "../img/Chile.webp",      
-        "3": "../img/China.webp",      
-        "4": "../img/Brasilia.webp",
-        "1_1": "../img/rio.jpg",      
-        "1_2": "../img/salvador.jpg",  
-        "1_3": "../img/dubai.jpg",   
-        "1_4": "../img/chicago.webp",   
-        "2_1": "../img/rio.jpg",
-        "2_2": "../img/salvador.jpg",
-        "2_3": "../img/dubai.jpg",
-        "2_4": "../img/chicago.webp",
-        "3_1": "../img/rio.jpg",
-        "3_2": "../img/salvador.jpg",
-        "3_3": "../img/dubai.jpg",
-        "3_4": "../img/chicago.webp",
-        "4_1": "../img/rio.jpg",
-        "4_2": "../img/salvador.jpg",
-        "4_3": "../img/dubai.jpg",
-        "4_4": "../img/chicago.webp"   
-    };
 
     // Obter os nomes correspondentes
     const origem = origens[origemValue] || "Desconhecida";
@@ -139,3 +105,46 @@ window.onload = function () {
         <strong>Quantidade de Pessoas:</strong> ${quantPessoas}
     `;
 };
+
+document.getElementById('dataSaida').addEventListener('change', function () {
+    const dataSaida = new Date(this.value);
+    const dataRetornoInput = document.getElementById('dataRetorno');
+    const dataRetorno = new Date(dataRetornoInput.value);
+
+    // Se a data de saída estiver definida e a data de retorno estiver antes dela
+    if (dataRetornoInput.value && dataRetorno < dataSaida) {
+        alert('A data de retorno não pode ser anterior à data de saída.');
+        dataRetornoInput.value = ''; // Limpa o campo de data de retorno
+    }
+});
+
+document.getElementById('dataRetorno').addEventListener('change', function () {
+    const dataSaida = new Date(document.getElementById('dataSaida').value);
+    const dataRetorno = new Date(this.value);
+
+    // Verifica se a data de retorno é anterior à data de saída
+    if (dataSaida && dataRetorno < dataSaida) {
+        alert('A data de retorno não pode ser anterior à data de saída.');
+        this.value = ''; // Limpa o campo de data de retorno
+    }
+});
+
+// Função para atualizar o preço baseado na quantidade de pessoas
+function atualizarPreco(unitario) {
+    console.log("Olaladld")
+    // Obtém o número de pessoas
+    var quantidadePessoas = parseInt(document.getElementById('quantPessoas').value);
+
+    let precoAtualizado = quantidadePessoas * unitario;
+
+       // Exibe o preço atualizado
+    document.getElementById('precoAtual').innerText = precoAtualizado.toFixed(2);
+    document.getElementById('valorDesgracado').innerText = precoAtualizado.toFixed(2);
+    
+}
+
+// Adiciona um evento para atualizar o preço sempre que a quantidade de pessoas for alterada
+document.getElementById('quantPessoas').addEventListener('input', atualizarPreco);
+
+// Chama a função para definir o preço ao carregar a página
+atualizarPreco();

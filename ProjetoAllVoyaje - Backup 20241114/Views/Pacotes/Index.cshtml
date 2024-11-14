@@ -1,0 +1,67 @@
+﻿@model IEnumerable<ProjetoAllVoyaje.Models.PacoteViagem>
+@{
+    ViewData["Title"] = "Pacotes";
+    Layout = "~/Views/Shared/_Layout_dois.cshtml";
+}
+
+
+<div class="juntarbannerFechar" style="position: relative;">
+    <a asp-controller="Viagens" asp-action="Index"><i id="fechar" class="fa-solid fa-xmark mb-4"></i></a>
+    <div class="viagensBanner">
+        <img src="~/img/MocaIlha.jpg" class="d-block" alt="Imagem de Paisagem">
+    </div>
+</div>
+
+
+<div class="text-center d-flex align-items-center justify-content-center mb-4">
+    <h1 class="display-4 mb-1">AllVoyaje</h1>
+    <img src="~/img/PatoAll.png" class="ms-2" alt="PatoLogo" style="height: 70px; width: auto; margin-top: 10px;">
+</div>
+
+
+
+@{
+    <style>
+        .cardImage {
+            height: 230px; /* Altura fixa para a imagem */
+            width: 100%; /* Largura total da coluna */
+            object-fit: cover; /* Corta a imagem se necessário */
+        }
+
+        .card {
+            overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse a altura do card */
+        }
+    </style>
+
+    <div class="d-flex flex-wrap justify-content-center">
+        @if (Model != null)
+            @foreach (var p in Model)
+            {
+                <div class="card m-2" style="max-width: 480px; width: 100%;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            @{
+                                List<ImagemPacote> imagens = ViewData["imagens"] as List<ImagemPacote>;
+                                var img = imagens.FirstOrDefault(i => i.PacoteViagemId == p.PacoteViagemId)?.URL ?? "/img/Mar.jpg";
+                            }
+                            <img class="card-img-top" src="@img" alt="Imagem representativa do lugar escolhido" style="object-fit: cover; height: 100%; min-height:50%">
+                        </div>
+                        <div class="col-md-8" id="INFO">
+                            <div class="card-body">
+                                <h5 class="card-title">@p.NomePacote</h5>
+                                <p class="card-text"><strong>Hotel:</strong> @p.Hotel</p>
+                                <p class="card-text"><strong>Descrição:</strong> @p.Descricao</p>
+                                <p class="card-text"><strong>Tipo:</strong> @p.tipopacote.Tipo</p>
+                                <p class="card-text"><strong>Preço:</strong> @p.Preco</p>
+                            </div>
+                            <div class="text-end" id="ver" style="margin-right:10px; margin-bottom:10px">
+                                <a asp-action="Details" asp-controller="Pacotes" asp-route-id="@p.PacoteViagemId" class="btn Ver">Ver Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+    </div>
+}
+
+

@@ -1,0 +1,84 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<div class="fundo row g-0">
+    <div class="patoelogo">
+        <img class="pato" src="~/img/patoall.png" />
+        <a class="logo" asp-area="" asp-controller="Home" asp-action="Index">AllVoyaje</a>
+    </div>
+    <section style="display: flex;">
+        <!-- div da eaquerda  -->
+        <div style="flex-grow: 1">
+
+            <div class="espacoBranco col-md-4">
+                <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <h3 class="cadastroForms">Cadastro</h3>
+                    <hr />
+                    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+
+                    <div class="form-floating mb-2">
+                        <input asp-for="Input.Email" class="form-controlLabel" autocomplete="username" aria-required="true" placeholder="E-mail" />
+                       
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating mb-2">
+                        <input asp-for="Input.Password" class="form-controlLabel" autocomplete="new-password" aria-required="true" placeholder="Senha" />
+                        
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <input asp-for="Input.ConfirmPassword" class="form-controlLabel" autocomplete="new-password" aria-required="true" placeholder="Confirmar senha" />
+                        
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <div class="esquecieCad">
+                        <p>
+                            <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Já tem Cadastro?</a>
+                        </p>
+                    </div>
+                    <div class="mudabotao">
+                        <button   id="registerSubmit-Cancelar" type="reset" class="btn btn-lg btn-primary">Cancelar</button>
+                        <button id="registerSubmit" type="submit" class="btn btn-lg btn-primary">Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- div da direita  -->
+        <div style="flex-grow: 1">
+            <img src="~/img/Mar.jpg" alt="Alternate Text" class="imagemMar" /> <!-- Adicione um div para a imagem de fundo -->
+        </div>
+    </section>
+</div>
+<div class="col-md-8">
+    <section>
+        @{
+            if ((Model.ExternalLogins?.Count ?? 0) == 0)
+            {
+
+            }
+            else
+            {
+                <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                    <div>
+                        <p>
+                            @foreach (var provider in Model.ExternalLogins!)
+                            {
+                                <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                            }
+                        </p>
+                    </div>
+                </form>
+            }
+        }
+    </section>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
