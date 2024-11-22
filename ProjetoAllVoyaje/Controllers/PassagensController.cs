@@ -34,15 +34,21 @@ namespace ProjetoAllVoyaje.Controllers
             return View(dados);
         }
 
-        //[Bind("ClienteId,Nome,CPF,Telefone,Cargo")] Cliente cliente
+        //[Bind("ClienteId,Nome,CPF,Telefone,Cargo")] Cliente cliente        
         public async Task<IActionResult> Salvar(Guid Id, int quantPessoas)
         {
-            var user = await _userManager.GetUserAsync(User);
+            var user = await _userManager.GetUserAsync(User);           
+
+            if (user == null)
+                return RedirectToAction("Logar", "Home");
+
+            var ClienteId = _context.Clientes.Where(c => c.AspNetUserId == user.Id).FirstOrDefault().ClienteId;
+
 
             PacoteCliente pc = new PacoteCliente
             {
                 PacoteClienteId = Guid.NewGuid(),
-                ClienteId = new Guid(user.Id),
+                ClienteId = ClienteId,    
                 PacoteViagemId = Id,
                 QtdPessoas = quantPessoas
             };

@@ -19,26 +19,29 @@
         <div class="Grupo-info ">
             <div class="Saida-destino1">
                 <div class="sepDestiOri1" id="datalistOrigem">
-                    <select class="numeroum form-control" id="origem" name="origem" placeholder="Origem" required>
+                    @Html.DropDownList("origem", (IEnumerable<SelectListItem>)ViewBag.Origens, new { @class = "numeroum form-control" })
+@*                     <select class="numeroum form-control" id="origem" name="origem" placeholder="Origem" required>
+                        <option value="Todos">[Todos]</option>
                         <option value="Sao Paulo">São Paulo</option>
                         <option value="Campinas">Campinas</option>
                         <option value="Bauru">Bauru</option>
                         <option value="Guarulhos">Igaraçu</option>
-                       
-                    </select>
+                    </select> *@
                 </div>
-                <div id="datalistDestino1 ">
-                    <select class="numerodois form-control" id="destino" name="destino" placeholder="Destino" required>
-                        <option value="Parana" class="nacional">Parana</option>
-                        <option value="Ceara" class="nacional">Ceará</option>
+                <div id="datalistDestino1">
+                    @Html.DropDownList("destino", (IEnumerable<SelectListItem>)ViewBag.Destinos, new { @class = "numeroum form-control" })
+                    @* <select class="numerodois form-control" id="destino" name="destino" placeholder="Destino" required>
+                        <option value="Todos">[Todos]</option>
+                        <option value="Paraná" class="nacional">Paraná</option>
+                        <option value="Ceará" class="nacional">Ceará</option>
                         <option value="Goias" class="nacional">Goiás</option>
                         <option value="Rio de Janeiro" class="internacional">Rio de Janeiro</option>
                         <option value="Nova York" class="nacional">Nova York</option>
-                    </select>
+                    </select> *@
                 </div>
             </div>
 
-            <div class="NacInter1 ">
+            @* <div class="NacInter1 ">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="tipoViagem" id="inlineRadio1" value="172A70C4-1085-42EF-B239-C43631C3F77C" onclick="toggleDestinos();" checked>
                     <label class="form-check-label" for="inlineRadio1">Nacionais</label>
@@ -47,17 +50,17 @@
                     <input class="form-check-input" type="radio" name="tipoViagem" id="inlineRadio2" value="BAF3B655-4C52-48C4-9BE1-A0F8F8DA74DB" onclick="toggleDestinos();">
                     <label class="form-check-label" for="inlineRadio2">Internacionais</label>
                 </div>
-            </div>
+            </div> *@
 
             
 
             <div class="datas1">
                 <div class="cor-fundo">
                     <div class="data1">
-                        <input type="date" name="dataInicio" id="dataInicio" required />
+                        <input type="date" name="dataInicio" id="dataInicio" value="@ViewData["dataInicio"]" />
                     </div>
                     <div class="data2">
-                        <input type="date" name="dataFim" id="dataFim" required />
+                        <input type="date" name="dataFim" id="dataFim" value="@ViewData["dataFim"]" />
                     </div>
                 </div>
             </div>
@@ -69,6 +72,12 @@
     </form>
 
     <div id="resultado" class=" d-flex flex-wrap justify-content-center">
+        @if (ViewData["mensagem"] != null)
+        {
+            <div class="alert alert-warning" role="alert">
+                @ViewData["mensagem"]
+            </div>
+        }
         @foreach (var item in Model)
         {
             <div class="row g-0" style="max-width: 480px; width: 100%;">

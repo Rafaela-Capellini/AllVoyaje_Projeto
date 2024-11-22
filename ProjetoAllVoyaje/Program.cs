@@ -24,6 +24,25 @@ builder.Services.AddSingleton<IConexaoSql>(new ConexaoSql(connectionString));
 /*----------------------------------------------*/
 var app = builder.Build();
 
+/**************************************************/
+/*using (var scope = app.Services.CreateScope())
+{
+    // Recupera ambos os contextos
+    var applicationDbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    var minhaDbContext = scope.ServiceProvider.GetRequiredService<AllVoyajeDbContext>();
+
+    // Aplica as migrações do Identity
+    applicationDbContext.Database.Migrate();  // Aplica as migrações do ApplicationDbContext (Identity)
+
+    // Aplica as migrações para as tabelas de negócio (MinhaDbContext)
+    minhaDbContext.Database.Migrate();  // Aplica as migrações do MinhaDbContext (tabelas de negócio)
+
+    // Após aplicar as migrações, cria a trigger no banco de dados (no contexto de negócio)
+    minhaDbContext.CreateTrigger();  // Criação da trigger para as tabelas de negócio
+}*/
+
+/**************************************************/
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -47,6 +66,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
 app.MapRazorPages();
 
 app.Run();

@@ -25,7 +25,31 @@ namespace ProjetoAllVoyaje.Data
             modelBuilder.Entity<PacoteCliente>().ToTable("tbPacoteClientes");
           
             modelBuilder.Entity<PacoteViagem>().ToTable("tbPacoteViagens");
-            modelBuilder.Entity<ImagemPacote>().ToTable("tbImagemPacote");
+            modelBuilder.Entity<ImagemPacote>().ToTable("tbImagemPacote");            
         }
+
+        /*public void CreateTrigger()
+        {
+            var sql = @"
+        IF NOT EXISTS (SELECT * FROM sys.triggers WHERE name = 'trg_UsuarioClienteAfterUserInsert')
+            BEGIN
+                CREATE TRIGGER trg_UsuarioClienteAfterUserInsert
+                ON AspNetUsers
+                FOR INSERT
+                AS
+                BEGIN
+                    DECLARE @UserId NVARCHAR(450), @UserName NVARCHAR(256);
+                    
+                    SELECT @UserId = Id, @UserName = UserName FROM INSERTED;
+
+                    INSERT INTO tbClientes (ClienteId, Nome, CPF, Telefone, Cargo, AspNetUserId)
+                    VALUES (NEWID(), @UserName, '', '', '', @UserId);
+                END;
+            END;
+        ";
+
+            this.Database.ExecuteSqlRaw(sql); // Executa o comando SQL
+        }*/
+
     }
 }

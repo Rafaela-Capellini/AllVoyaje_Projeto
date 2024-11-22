@@ -18,6 +18,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using ProjetoAllVoyaje.Data;
+using ProjetoAllVoyaje.Models;
 
 namespace ProjetoAllVoyaje.Areas.Identity.Pages.Account
 {
@@ -29,13 +31,15 @@ namespace ProjetoAllVoyaje.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<IdentityUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private AllVoyajeDbContext _dbContext;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             IUserStore<IdentityUser> userStore,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            AllVoyajeDbContext dbContext)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -43,6 +47,7 @@ namespace ProjetoAllVoyaje.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _dbContext = dbContext;
         }
 
         /// <summary>
@@ -133,6 +138,24 @@ namespace ProjetoAllVoyaje.Areas.Identity.Pages.Account
 
                     await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+
+                    /*------ Caca começa aqui ---------*/
+                    var clienteUSER = _dbContext.Clientes.Where(c => c.AspNetUserId == userId).FirstOrDefault();
+                    if (clienteUSER == null)
+                    {
+                        Cliente c = new Cliente
+                        {
+                            ClienteId = Guid.NewGuid(),
+                            Nome = user.UserName,
+                            CPF = "",
+                            Cargo = "",
+                            Telefone = "",
+                            AspNetUserId = userId
+                        };
+                        _dbContext.Clientes.Add(c);
+                        await _dbContext.SaveChangesAsync();
+                    }
+                    /***********************************/
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {

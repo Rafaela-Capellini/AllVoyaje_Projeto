@@ -12,7 +12,7 @@ using ProjetoAllVoyaje.Data;
 namespace ProjetoAllVoyaje.Migrations
 {
     [DbContext(typeof(AllVoyajeDbContext))]
-    [Migration("20241114135512_Inicial")]
+    [Migration("20241121155138_Inicial")]
     partial class Inicial
     {
         /// <inheritdoc />
