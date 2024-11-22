@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -11,6 +12,7 @@ using ProjetoAllVoyaje.Models;
 
 namespace ProjetoAllVoyaje.Controllers
 {
+    [Authorize(Roles = "Admin, ADMIN")]
     public class ClientesController : Controller
     {
         private readonly AllVoyajeDbContext _context;

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,20 +15,34 @@ namespace ProjetoAllVoyaje.Controllers
     public class PacoteClientesController : Controller
     {
         private readonly AllVoyajeDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public PacoteClientesController(AllVoyajeDbContext context)
+        public PacoteClientesController(AllVoyajeDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: PacoteClientes
         public async Task<IActionResult> Index()
         {
+            var user = await _userManager.GetUserAsync(User);
+            var cliente = await _context.Clientes.Where(c => c.AspNetUserId == user.Id).FirstOrDefaultAsync();
+            var clienteId = cliente.ClienteId;
+            var eAdmin = await _userManager.IsInRoleAsync(user, "ADMIN");
+
+            ViewData["admin"] = eAdmin;
+
             var allVoyajeDbContext = _context.PacoteClientes.Include(p => p.Cliente).Include(p => p.Pacote);
-            return View(await allVoyajeDbContext.ToListAsync());
+            
+            if (eAdmin)
+                return View(await allVoyajeDbContext.ToListAsync());
+
+            return View(await allVoyajeDbContext.Where(c => c.ClienteId == clienteId).ToListAsync());
         }
 
         // GET: PacoteClientes/Details/5
+        [Authorize(Roles = "Admin, ADMIN")]
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
@@ -47,6 +63,7 @@ namespace ProjetoAllVoyaje.Controllers
         }
 
         // GET: PacoteClientes/Create
+        [Authorize(Roles = "Admin, ADMIN")]
         public IActionResult Create()
         {
             ViewData["ClienteId"] = new SelectList(_context.Clientes, "ClienteId", "ClienteId");
@@ -74,6 +91,7 @@ namespace ProjetoAllVoyaje.Controllers
         }
 
         // GET: PacoteClientes/Edit/5
+        [Authorize(Roles = "Admin, ADMIN")]
         public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null)
@@ -96,6 +114,7 @@ namespace ProjetoAllVoyaje.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, ADMIN")]
         public async Task<IActionResult> Edit(Guid id, [Bind("PacoteClienteId,ClienteId,PacoteViagemId,QtdPessoas")] PacoteCliente pacoteCliente)
         {
             if (id != pacoteCliente.PacoteClienteId)
@@ -129,6 +148,7 @@ namespace ProjetoAllVoyaje.Controllers
         }
 
         // GET: PacoteClientes/Delete/5
+        [Authorize(Roles = "Admin, ADMIN")]
         public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
@@ -151,6 +171,7 @@ namespace ProjetoAllVoyaje.Controllers
         // POST: PacoteClientes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, ADMIN")]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             var pacoteCliente = await _context.PacoteClientes.FindAsync(id);

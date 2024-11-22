@@ -2,14 +2,14 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout_quatro.cshtml";
+    Layout = "~/Views/Shared/_Layout_cinco.cshtml";
+    var eAdmin = ViewData["admin"].ToString();
 }
 
-<h1>Index</h1>
+<h1 class="text-center m-4">Meus Pacotes</h1>
+<div class="linha"></div>
 
-<p>
-    <button id="BotaoCriar"><a asp-action="Create" class="btn">Criar Novo</a></button>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -38,9 +38,12 @@
                 @Html.DisplayFor(modelItem => item.QtdPessoas)
             </td>
             <td>
-                    <button id="Botaoeditar"><a asp-action="Edit" asp-route-id="@item.PacoteClienteId" class="btn">Editar</a></button>
-                    <button id="Botaoeditar"><a asp-action="Details" asp-route-id="@item.PacoteClienteId" class="btn">Detalhes</a></button>
-                    <button id="BotaoNormalDelete"><a asp-action="Delete" asp-route-id="@item.PacoteClienteId" class="btn">Deletar</a></button>
+                    @if (eAdmin=="True")
+                    {
+                        <button id="Botaoeditar"><a asp-action="Edit" asp-route-id="@item.PacoteClienteId" class="btn">Editar</a></button>
+                        <button id="Botaoeditar"><a asp-action="Details" asp-route-id="@item.PacoteClienteId" class="btn">Detalhes</a></button>
+                        <button id="BotaoNormalDelete"><a asp-action="Delete" asp-route-id="@item.PacoteClienteId" class="btn">Deletar</a></button>
+                    }
             </td>
         </tr>
 }

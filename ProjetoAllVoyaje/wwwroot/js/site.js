@@ -148,3 +148,5 @@ document.getElementById('quantPessoas').addEventListener('input', atualizarPreco
 
 // Chama a função para definir o preço ao carregar a página
 atualizarPreco();
+
+
