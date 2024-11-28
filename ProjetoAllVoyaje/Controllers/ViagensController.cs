@@ -27,8 +27,8 @@ namespace ProjetoAllVoyaje.Controllers
             List<ImagemPacote> imagens = await _context.ImagemPacote.ToListAsync();
             ViewData["imagens"] = imagens;
 
-            var origens = getOrigens(); 
-            var destinos = getDestinos(); 
+            var origens = getOrigens();
+            var destinos = getDestinos();
 
             // Passa a lista de opções para a view
             ViewBag.Origens = origens;
@@ -37,7 +37,7 @@ namespace ProjetoAllVoyaje.Controllers
             return View(dados);
         }
 
-        private List<SelectListItem> getOrigens() 
+        private List<SelectListItem> getOrigens()
         {
             return new List<SelectListItem>
             {
@@ -54,9 +54,20 @@ namespace ProjetoAllVoyaje.Controllers
             return new List<SelectListItem>
             {
                 new SelectListItem { Text = "Todos os destinos", Value = "Todos" },
-                new SelectListItem { Text = "Paraná", Value = "Paraná" },
-                new SelectListItem { Text = "Ceará", Value = "Ceará" },
-                new SelectListItem { Text = "Goias", Value = "Goias" },
+               new SelectListItem { Text = "São Paulo", Value = "São Paulo" },
+                new SelectListItem { Text = "Bahia", Value = "Bahia" },
+                new SelectListItem { Text = "Santa Catarina", Value = "Santa Catarina" },
+                new SelectListItem { Text = "Amazonas", Value = "Amazonas" },
+                new SelectListItem { Text = "Paris", Value = "Paris" },
+                new SelectListItem { Text = "Londres", Value = "Londres" },
+                new SelectListItem { Text = "Miami", Value = "Miami" },
+                new SelectListItem { Text = "Lisboa", Value = "Lisboa" },
+                new SelectListItem { Text = "Tokyo", Value = "Tokyo" },
+                new SelectListItem { Text = "Barcelona", Value = "Barcelona" },
+                new SelectListItem { Text = "Milão", Value = "Milão" },
+                new SelectListItem { Text = "Dubai", Value = "Dubai" },
+                new SelectListItem { Text = "Munique", Value = "Munique" },
+                new SelectListItem { Text = "Roma", Value = "Roma" },
                 new SelectListItem { Text = "Rio de Janeiro", Value = "Rio de Janeiro" },
                 new SelectListItem { Text = "Nova York", Value = "Nova York" }
             };
@@ -72,14 +83,14 @@ namespace ProjetoAllVoyaje.Controllers
                         p => (dataInicio.HasValue ? p.PacoteViagem.DataSaida >= dataInicio : true)
                         && (dataFim.HasValue ? p.PacoteViagem.DataRetorno <= dataFim : true)
                         // p => p.PacoteViagem.TipoPacoteId.ToString().ToUpper().Equals("7DFF4C8A-700C-4824-A7F2-A1321A22B817")
-                        && (destino.ToUpper().Equals("TODOS") ? true :  p.PacoteViagem.NomePacote.Contains(destino)))
+                        && (destino.ToUpper().Equals("TODOS") ? true : p.PacoteViagem.NomePacote.Contains(destino)))
                 .AsQueryable()
 
                 .ToListAsync();
 
             List<ImagemPacote> imagens = await _context.ImagemPacote.ToListAsync();
             ViewData["imagens"] = imagens;
-            
+
             // Retornar os campos usados na pesquisa
             ViewData["origem"] = origem;
             ViewData["destino"] = destino;
@@ -99,7 +110,7 @@ namespace ProjetoAllVoyaje.Controllers
             }
 
             return View("Index", dados);
-           
+
         }
     }
 }

@@ -472,7 +472,8 @@ footer {
 .Botao {
     /* Rever depois */
     display: flex;
-    justify-content: center;
+    width: 150px;
+    height: 50px;
     align-items: center;
     width: 200px;
     height: 200px;
@@ -498,6 +499,8 @@ footer {
     border: none;
     border-radius: 20px;
     margin-top: 0;
+    width:150px;
+    height:50px
     
 }
 
@@ -562,6 +565,8 @@ footer {
     height: 200px;
 }
 
+
+
 .QuantPessoas1 {
     border: 1px;
     height: 40px;
@@ -595,14 +600,14 @@ footer {
 
 .numeroum {
     border: 0px;
-    height: 60px;
-    width: 145px
+    height: 80px;
+    width: 195px
 }
 
 .numerodois {
     border: 0px;
-    height: 60px;
-    width: 145px
+    height: 80px;
+    width: 195px
 }
 
 .datas1 {
@@ -610,7 +615,7 @@ footer {
     /* Rever depois */
     display: flex;
     align-items: center;
-    width: 60%;
+    width: 45%;
     height: 200px;
 }
 
@@ -622,7 +627,8 @@ input[type="date"] {
     border: 0px;
     border-radius: 5px;
     margin: 5px;
-    width: 250px
+    width: 250px;
+    height:80px
 }
 
 .cor-fundo {
@@ -652,14 +658,12 @@ input[type="date"] {
 }
 
 .modal-footer3 {
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    margin-top: 40px;
-    margin-left: 40px;
-    margin-bottom: 30px;
+    margin:50px 0px 0px 0px
 }
 
 .compra {
@@ -671,7 +675,7 @@ input[type="date"] {
 
 .compra2 {
     background-color: #E4E4E4;
-    padding: 10px 30px 10px 30px;
+    padding: 20px 60px 20px 60px;
     border-radius: 20px;
     font-size: 25px
 }
@@ -681,7 +685,10 @@ input[type="date"] {
 
 
 .comprar-questao {
-    font-size: 70px
+    font-size: 70px;
+    justify-content: center;
+    display: grid;
+}
 }
 /*------------------Passagens--------------*/
 .linha {
@@ -694,10 +701,10 @@ input[type="date"] {
 }
 
 .preenchimento {
-    margin-left: 460px;
     justify-content: center;
     align-items: center;
-    margin-top: 100px
+   
+    margin: 90px 0px 0px 0px;
 }
 
 .recheio {
@@ -705,16 +712,21 @@ input[type="date"] {
 }
 
 .realisar-compra {
-    margin-left: 218px;
-    margin-bottom: 10px
+    justify-content: center;
+    display: grid;
+    margin: 20px 0px 0px 0px;
 }
 
 .realisar-compra2 {
-    margin-left: 187px;
+    justify-content: center;
+    display: grid;
+    margin: 0;
 }
 
 .realisar-compra3 {
-    margin-left: 210px;
+    justify-content: center;
+    display: grid;
+    margin: 0;
 }
 /*-------------------Pacotes-------------------*/
 .cardElement {
@@ -959,7 +971,7 @@ input[type="date"] {
 
 /* Responsivo para dispositivos de 300px a 992px */
 /*@media (min-width: 300px) and (max-width: 992px) {*/
-@media  (max-width: 767px) {
+@media (max-width: 767px) {
     #ima-text {
         display: grid;
     }
@@ -1070,6 +1082,12 @@ input[type="date"] {
         text-decoration: none; /* Remove o sublinhado dos links */
     }
 
+    .modal-footer2 {
+        
+        margin-right: 0px;
+        
+    }
+
     #resultado {
         margin: 30px 0px 90px 0px;
     }
@@ -1093,12 +1111,15 @@ input[type="date"] {
 
     #info-coming {
         font-size: 20px;
-        margin-left: 30px; /* Ajuste leve na margem */
-    }
+        margin-left: 20px; /* Ajuste leve na margem */
+    display: grid;
+    justify-items: center;
+    width: 150px;
+}
 
     #Titulo-hotel {
         font-size: 20px;
-        padding-left: 70px;
+        padding-left: 55px;
     }
 
     #Titulo-hotel2 {
@@ -1108,9 +1129,7 @@ input[type="date"] {
 
 
 
-    .Arruma-cara {
-        margin-top: 30px;
-    }
+    
 
     #preconome {
         margin-right: 20px;
@@ -1140,24 +1159,34 @@ input[type="date"] {
     }
 
     .comprar-questao {
-        margin-left: 70px;
-        font-size: 40px;
+       
+         font-size: 40px;
         margin-top: 120px;
+        justify-content: center;
+        display: grid;
     }
 
     .realisar-compra3 {
-        margin-left: 140px;
         font-size: 30px;
+        justify-content: center;
+        display: grid;
+        margin:0
     }
 
     .realisar-compra2 {
-        margin-left: 135px;
-        font-size: 20px;
+       
+         font-size: 20px;
+        justify-content: center;
+        display: grid;
+        margin: 10px 0px 0px 0px;
     }
 
     .realisar-compra {
-        margin-left: 160px;
         font-size: 20px;
+        justify-content: center;
+        display: grid;
+        margin: 0;
+        margin: 10px 0px 0px 0px;
     }
 
     .compra2 {
@@ -1307,9 +1336,18 @@ input[type="date"] {
         margin-left: 90px;
     }
 
-    #info-coming {
-        font-size: 10px;
-        margin-left: 30px;
+    
+
+    .numeroum {
+        border: 0px;
+        height: 60px;
+        width: 150px
+    }
+
+    .numerodois {
+        border: 0px;
+        height: 60px;
+        width: 50px
     }
 }
 @media (min-width: 768px) and (max-width: 992px) {
@@ -1394,30 +1432,70 @@ input[type="date"] {
     }
 
     #info-coming {
-        font-size: 30px;
+        font-size: 40px;
         margin-left: 60px;
     }
 
     .preenchimento {
-        margin-left: 180px;
+        
         justify-content: center;
         align-items: center;
         margin-top: 100px;
+        display: grid;
+        margin: 0;
+    }
+
+    .compra2 {
+        padding: 45px 45px 45px 45px;
+        font-size: 50px;
+        border-radius: 50px
     }
 
     .comprar-questao {
-        font-size: 50px;
+        font-size: 60px;
+        margin-top: 120px;
+        justify-content: center;
+        display: grid;
     }
 
     .realisar-compra3 {
-        margin-left: 80px;
-    }
-
-    .realisar-compra {
-        margin-left: 100px;
+        font-size: 40px;
+        justify-content: center;
+        display: grid;
+        margin: 0
     }
 
     .realisar-compra2 {
-        margin-left: 90px;
+        font-size: 40px;
+        justify-content: center;
+        display: grid;
+        margin: 10px 0px 0px 0px;
+    }
+
+    .realisar-compra {
+        font-size: 40px;
+        justify-content: center;
+        display: grid;
+        margin: 0;
+        margin: 10px 0px 0px 0px;
+    }
+
+    #Titulo-hotel {
+        font-size: 40px;
+        
+    }
+
+    #Titulo-hotel2 {
+        font-size: 40px;
+    }
+
+    #quantidade-pessoa {
+        width: 500px
+    }
+
+    .modal-footer2 {
+        
+        margin-right: 0px;
+       
     }
 }
